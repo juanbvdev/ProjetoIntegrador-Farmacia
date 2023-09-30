@@ -8,8 +8,13 @@
 </head>
 <body>
     <?php 
-        session_start();
         include_once('classes/ClienteClass.php');
+        
+        session_start();
+
+        // reset do server e da pagina
+        // session_unset();
+        // header('Location: cad-clie.php');
 
         $indexForm = true;
         
@@ -45,22 +50,29 @@
                 $_SESSION['clientes'][$_POST['cpf']] = $newClient;
             }
         }
+
+        if(isset($_POST['vClient'])) {
+            foreach ($_SESSION['clientes'] as $client) {
+                echo $client->getNome();
+            }
+        }
     ?>
 
+    <form action="cad-clie.php" method="post">
+        <input type="submit" name="vClient" value="ver clientes">
+    </form>
     <?php 
-        if($indexForm) {
-            echo '
+        if($indexForm) { ?>
             <form action="cad-clie.php" method="post">
                 <table>
                     <td><div class="button-container">
-                        
                         <div class="column">
                             <h2>Cadastro de Cliente</h2>
                             <input type="text" name="nome" placeholder="Nome">
                             <input type="text" name="cpf" placeholder="CPF">
                             <input type="text" name="idade" placeholder="Idade">
                             <input type="text" name="endereco" placeholder="Endereço">
-                            <input type="text" name="email" placeholder="email">    
+                            <input type="text" name="email" placeholder="Email">    
                         </div>
                         <div class="third-column">
                             <input type="submit" name="cadButton" value="Cadastrar" class="menu-button">
@@ -68,9 +80,7 @@
                     </div></td>
                 </table>
             </form>
-            ';
-        }
-    ?>
+        <?php }?>
     
     <a href="../html/index.html" class="menu-button2">Voltar</a>
 </body>
