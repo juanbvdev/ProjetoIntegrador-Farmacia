@@ -1,33 +1,28 @@
 body {
-    background-color: #8a05be;
+    background-color: #00a86b; /* Verde para representar saúde */
     font-family: 'Helvetica Neue', sans-serif;
     text-align: center;
     margin: 0;
     padding: 0;
 }
 
-
 th {
-    color: #8a05be;
-
-}
-h1{
- color:#fff;
+    color: #00a86b; /* Verde */
 }
 
-table,
-a {
+h1 {
+    color: #fff; /* Texto branco */
+}
+
+table, a {
     margin: 0 auto;
     border-radius: 20px;
-    background-color: #fff;
-    color: #8a05be;
-    
-
+    background-color: #fff; /* Fundo branco */
+    color: #00a86b; /* Verde */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
-table,
-th,
-td {
+table, th, td {
     padding: 15px;
 }
 
@@ -38,18 +33,17 @@ input[type="password"] {
     height: 20px;
     padding: 10px;
     background: #fff;
-    border: 1px solid #8a05be;
-    color: #000000;
+    border: 1px solid #00a86b; /* Verde */
+    color: #000;
     margin: 10px 0;
     border-radius: 25px;
 }
-
 
 .menu-button {
     display: inline-block;
     width: 80%;
     height: 50px;
-    background-color: #8a05be;
+    background-color: #00a86b; /* Verde */
     color: #fff;
     text-align: center;
     line-height: 50px;
@@ -58,20 +52,17 @@ input[type="password"] {
     border: none;
     cursor: pointer;
     border-radius: 25px;
-
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
-
 
 .button-container {
     text-align: center;
 }
 
-
 .column {
     display: inline-block;
     margin: 0 10px;
 }
-
 
 .third-column {
     margin-top: 20px;
@@ -80,25 +71,27 @@ input[type="password"] {
 .account-button {
     width: 180px;
     height: 40px;
-    background-color: #8a05be;
+    background-color: #00a86b; /* Verde */
     color: #fff;
     text-align: center;
     border: none;
     border-radius: 25px;
     cursor: pointer;
     margin: 10px auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
 .account-button2 {
     width: 180px;
     height: 40px;
     background-color: #fff;
-    color: #8a05be;
+    color: #00a86b; /* Verde */
     text-align: center;
     border: none;
     border-radius: 25px;
     cursor: pointer;
     margin: 10px auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
 .menu-button2 {
@@ -106,7 +99,7 @@ input[type="password"] {
     width: 13.5%;
     height: 40px;
     background-color: #fff;
-    color: #8a05be;
+    color: #00a86b; /* Verde */
     text-align: center;
     line-height: 42px;
     text-decoration: none;
@@ -114,7 +107,7 @@ input[type="password"] {
     border: none;
     cursor: pointer;
     border-radius: 25px;
-
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
 .modal {
@@ -126,7 +119,7 @@ input[type="password"] {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .modal-content {
@@ -135,7 +128,7 @@ input[type="password"] {
     padding: 20px;
     border-radius: 5px;
     width: 80%;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .close {
@@ -148,91 +141,35 @@ input[type="password"] {
 
 .invalid-cpf {
     border: 2px solid red;
-    color: red /* Define a borda vermelha */
+    color: red;
 }
 
-/* body {
-    background-color: #55ffa1;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 100px;
+/* ... (seu código CSS anterior) ... */
+
+.menu-button:hover,
+.menu-button:focus {
+    background-color: #009960; /* Cor alterada no hover */
+    transition: background-color 0.3s;
 }
 
-h1,
-th {
-    color: #34a366;
-
+.account-button:hover,
+.account-button:focus {
+    background-color: #009960; /* Cor alterada no hover */
+    transition: background-color 0.3s;
 }
 
-table,
-a {
-    margin: 0 auto;
-    border-collapse: collapse;
-    background-color: #1d5838;
-    color: #55ffa1;
-
+.account-button2:hover,
+.account-button2:focus {
+    background-color: #00a86b; /* Cor alterada no hover */
+    color: #fff; /* Texto fica branco no hover */
+    transition: background-color 0.3s, color 0.3s;
 }
 
-table,
-th,
-td {
-    border: 1px solid #333;
-
-
+.menu-button2:hover,
+.menu-button2:focus {
+    background-color: #00a86b; /* Cor alterada no hover */
+    color: #fff; /* Texto fica branco no hover */
+    transition: background-color 0.3s, color 0.3s;
 }
 
-th,
-td {
-    padding: 10px;
-
-
-}
-
-input[type="text"],
-input[type="number"] {
-    width: 100px;
-    background: #1d5838;
-    color: white;
-}
-
-
-.menu-button {
-    display: block;
-    width: 150px;
-    height: 50px;
-    background-color: #34a366;
-    color: white;
-    text-align: center;
-    line-height: 50px;
-    text-decoration: double;
-    margin: 20px;
-    border: black;
-    cursor: pointer;
-}
-
-
-.button-container {
-    text-align: center;
-}
-
-
-.column {
-    float: left;
-}
-
-
-.third-column {
-    clear: both;
-    margin-top: 20px;
-}
-.acount-button {
-    width: 110px;
-    height: 25px;
-    background-color: #1d5838;
-    color: rgb(255, 255, 255);
-    text-align: center;
-    margin: 0 auto;
-    cursor: pointer;
-} */
-
-
+/* ... (seu código CSS posterior) ... */
