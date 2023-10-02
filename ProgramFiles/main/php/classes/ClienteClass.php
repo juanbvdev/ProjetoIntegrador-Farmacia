@@ -1,174 +1,52 @@
-<?php 
-    class Cliente {
-        private $id;
-        private $nome;
-        private $cpf;
-        private $idade;
-        private $endereco;
-        private $email;
-        private $permissao;
-        private $cartoes;
-        private $compras;
-        private $receitas;
+<?php
+require('UserClass.php');
+class Cliente extends User
+{
+        private int $idcliente;
+        private string $retiradas;
+        private string $receitas;
 
-        /**
-         * Get the value of id
-         */
-        public function getId()
+
+        public function __construct($idcliente, $retiradas, $receitas, $nome, $cpf_cnpj, $idade, $endereco, $email, $permissao)
         {
-                return $this->id;
+                parent::__construct($nome, $cpf_cnpj, $idade, $endereco, $email, $permissao);
+                $this->idcliente = $idcliente;
+                $this->retiradas = $retiradas;
+                $this->receitas = $receitas;
         }
 
         /**
-         * Set the value of id
+         * Get the value of idcliente
          */
-        public function setId($id): self
+        public function getIdcliente(): int
         {
-                $this->id = $id;
+                return $this->idcliente;
+        }
+
+        /**
+         * Set the value of idcliente
+         */
+        public function setIdcliente(int $idcliente): self
+        {
+                $this->idcliente = $idcliente;
 
                 return $this;
         }
 
         /**
-         * Get the value of nome
+         * Get the value of retiradas
          */
-        public function getNome()
+        public function getRetiradas(): string
         {
-                return $this->nome;
+                return $this->retiradas;
         }
 
         /**
-         * Set the value of nome
+         * Set the value of retiradas
          */
-        public function setNome($nome): self
+        public function setRetiradas(string $retiradas): self
         {
-                $this->nome = $nome;
-
-                return $this;
-        }
-
-        /**
-         * Get the value of cpf
-         */
-        public function getCpf()
-        {
-                return $this->cpf;
-        }
-
-        /**
-         * Set the value of cpf
-         */
-        public function setCpf($cpf): self
-        {
-                $this->cpf = $cpf;
-
-                return $this;
-        }
-
-        /**
-         * Get the value of idade
-         */
-        public function getIdade()
-        {
-                return $this->idade;
-        }
-
-        /**
-         * Set the value of idade
-         */
-        public function setIdade($idade): self
-        {
-                $this->idade = $idade;
-
-                return $this;
-        }
-
-        /**
-         * Get the value of endereco
-         */
-        public function getEndereco()
-        {
-                return $this->endereco;
-        }
-
-        /**
-         * Set the value of endereco
-         */
-        public function setEndereco($endereco): self
-        {
-                $this->endereco = $endereco;
-
-                return $this;
-        }
-
-        /**
-         * Get the value of email
-         */
-        public function getEmail()
-        {
-                return $this->email;
-        }
-
-        /**
-         * Set the value of email
-         */
-        public function setEmail($email): self
-        {
-                $this->email = $email;
-
-                return $this;
-        }
-
-        /**
-         * Get the value of permissao
-         */
-        public function getPermissao()
-        {
-                return $this->permissao;
-        }
-
-        /**
-         * Set the value of permissao
-         */
-        public function setPermissao($permissao): self
-        {
-                $this->permissao = $permissao;
-
-                return $this;
-        }
-
-        /**
-         * Get the value of cartoes
-         */
-        public function getCartoes()
-        {
-                return $this->cartoes;
-        }
-
-        /**
-         * Set the value of cartoes
-         */
-        public function setCartoes($cartoes): self
-        {
-                $this->cartoes = $cartoes;
-
-                return $this;
-        }
-
-        /**
-         * Get the value of compras
-         */
-        public function getCompras()
-        {
-                return $this->compras;
-        }
-
-        /**
-         * Set the value of compras
-         */
-        public function setCompras($compras): self
-        {
-                $this->compras = $compras;
+                $this->retiradas = $retiradas;
 
                 return $this;
         }
@@ -176,7 +54,7 @@
         /**
          * Get the value of receitas
          */
-        public function getReceitas()
+        public function getReceitas(): string
         {
                 return $this->receitas;
         }
@@ -184,11 +62,10 @@
         /**
          * Set the value of receitas
          */
-        public function setReceitas($receitas): self
+        public function setReceitas(string $receitas): self
         {
                 $this->receitas = $receitas;
 
                 return $this;
         }
-    }
-?>
+}

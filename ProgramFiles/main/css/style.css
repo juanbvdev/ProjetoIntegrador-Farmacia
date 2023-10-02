@@ -1,5 +1,6 @@
 body {
-    background-color: #00a86b; /* Verde para representar saúde */
+    background-color: #00a86b;
+    /* Verde para representar saúde */
     font-family: 'Helvetica Neue', sans-serif;
     text-align: center;
     margin: 0;
@@ -7,24 +8,33 @@ body {
 }
 
 th {
-    color: #00a86b; /* Verde */
+    color: #00a86b;
+    /* Verde */
 }
 
 h1 {
-    color: #fff; /* Texto branco */
+    color: #fff;
+    /* Texto branco */
 }
 
-table, a {
+table,
+a {
     margin: 0 auto;
     border-radius: 20px;
-    background-color: #fff; /* Fundo branco */
-    color: #00a86b; /* Verde */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    background-color: #fff;
+    /* Fundo branco */
+    color: #00a86b;
+    /* Verde */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Sombra suave */
 }
 
-table, th, td {
+table,
+th,
+td {
     padding: 15px;
 }
+
 
 input[type="text"],
 input[type="number"],
@@ -33,7 +43,8 @@ input[type="password"] {
     height: 20px;
     padding: 10px;
     background: #fff;
-    border: 1px solid #00a86b; /* Verde */
+    border: 1px solid #00a86b;
+    /* Verde */
     color: #000;
     margin: 10px 0;
     border-radius: 25px;
@@ -43,7 +54,8 @@ input[type="password"] {
     display: inline-block;
     width: 80%;
     height: 50px;
-    background-color: #00a86b; /* Verde */
+    background-color: #00a86b;
+    /* Verde */
     color: #fff;
     text-align: center;
     line-height: 50px;
@@ -52,7 +64,8 @@ input[type="password"] {
     border: none;
     cursor: pointer;
     border-radius: 25px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Sombra suave */
 }
 
 .button-container {
@@ -71,27 +84,31 @@ input[type="password"] {
 .account-button {
     width: 180px;
     height: 40px;
-    background-color: #00a86b; /* Verde */
+    background-color: #00a86b;
+    /* Verde */
     color: #fff;
     text-align: center;
     border: none;
     border-radius: 25px;
     cursor: pointer;
     margin: 10px auto;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Sombra suave */
 }
 
 .account-button2 {
     width: 180px;
     height: 40px;
     background-color: #fff;
-    color: #00a86b; /* Verde */
+    color: #00a86b;
+    /* Verde */
     text-align: center;
     border: none;
     border-radius: 25px;
     cursor: pointer;
     margin: 10px auto;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Sombra suave */
 }
 
 .menu-button2 {
@@ -99,7 +116,8 @@ input[type="password"] {
     width: 13.5%;
     height: 40px;
     background-color: #fff;
-    color: #00a86b; /* Verde */
+    color: #00a86b;
+    /* Verde */
     text-align: center;
     line-height: 42px;
     text-decoration: none;
@@ -107,7 +125,8 @@ input[type="password"] {
     border: none;
     cursor: pointer;
     border-radius: 25px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Sombra suave */
 }
 
 .modal {
@@ -148,27 +167,33 @@ input[type="password"] {
 
 .menu-button:hover,
 .menu-button:focus {
-    background-color: #009960; /* Cor alterada no hover */
+    background-color: #009960;
+    /* Cor alterada no hover */
     transition: background-color 0.3s;
 }
 
 .account-button:hover,
 .account-button:focus {
-    background-color: #009960; /* Cor alterada no hover */
+    background-color: #009960;
+    /* Cor alterada no hover */
     transition: background-color 0.3s;
 }
 
 .account-button2:hover,
 .account-button2:focus {
-    background-color: #00a86b; /* Cor alterada no hover */
-    color: #fff; /* Texto fica branco no hover */
+    background-color: #00a86b;
+    /* Cor alterada no hover */
+    color: #fff;
+    /* Texto fica branco no hover */
     transition: background-color 0.3s, color 0.3s;
 }
 
 .menu-button2:hover,
 .menu-button2:focus {
-    background-color: #00a86b; /* Cor alterada no hover */
-    color: #fff; /* Texto fica branco no hover */
+    background-color: #00a86b;
+    /* Cor alterada no hover */
+    color: #fff;
+    /* Texto fica branco no hover */
     transition: background-color 0.3s, color 0.3s;
 }
 

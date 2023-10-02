@@ -1,18 +1,14 @@
 <?php 
-    class Funcionario {
-        private $id;
-        private $nome;
-        private $cpf;
-        private $idade;
-        private $endereco;
-        private $email;
-        private $permissao;
-        private $vendas;
+    class Funcionario extends User {
+        private int $id;
+        private string $atendimento;        
+
+        
 
         /**
          * Get the value of id
          */
-        public function getId()
+        public function getId(): int
         {
                 return $this->id;
         }
@@ -20,7 +16,7 @@
         /**
          * Set the value of id
          */
-        public function setId($id): self
+        public function setId(int $id): self
         {
                 $this->id = $id;
 
@@ -28,129 +24,20 @@
         }
 
         /**
-         * Get the value of nome
+         * Get the value of atendimento
          */
-        public function getNome()
+        public function getAtendimento(): string
         {
-                return $this->nome;
+                return $this->atendimento;
         }
 
         /**
-         * Set the value of nome
+         * Set the value of atendimento
          */
-        public function setNome($nome): self
+        public function setAtendimento(string $atendimento): self
         {
-                $this->nome = $nome;
-
-                return $this;
-        }
-
-        /**
-         * Get the value of cpf
-         */
-        public function getCpf()
-        {
-                return $this->cpf;
-        }
-
-        /**
-         * Set the value of cpf
-         */
-        public function setCpf($cpf): self
-        {
-                $this->cpf = $cpf;
-
-                return $this;
-        }
-
-        /**
-         * Get the value of idade
-         */
-        public function getIdade()
-        {
-                return $this->idade;
-        }
-
-        /**
-         * Set the value of idade
-         */
-        public function setIdade($idade): self
-        {
-                $this->idade = $idade;
-
-                return $this;
-        }
-
-        /**
-         * Get the value of endereco
-         */
-        public function getEndereco()
-        {
-                return $this->endereco;
-        }
-
-        /**
-         * Set the value of endereco
-         */
-        public function setEndereco($endereco): self
-        {
-                $this->endereco = $endereco;
-
-                return $this;
-        }
-
-        /**
-         * Get the value of email
-         */
-        public function getEmail()
-        {
-                return $this->email;
-        }
-
-        /**
-         * Set the value of email
-         */
-        public function setEmail($email): self
-        {
-                $this->email = $email;
-
-                return $this;
-        }
-
-        /**
-         * Get the value of permissao
-         */
-        public function getPermissao()
-        {
-                return $this->permissao;
-        }
-
-        /**
-         * Set the value of permissao
-         */
-        public function setPermissao($permissao): self
-        {
-                $this->permissao = $permissao;
-
-                return $this;
-        }
-
-        /**
-         * Get the value of vendas
-         */
-        public function getVendas()
-        {
-                return $this->vendas;
-        }
-
-        /**
-         * Set the value of vendas
-         */
-        public function setVendas($vendas): self
-        {
-                $this->vendas = $vendas;
+                $this->atendimento = $atendimento;
 
                 return $this;
         }
     }
-?>
