@@ -1,119 +1,25 @@
 <?php 
-    class Medico {
-        private $id;
-        private $nome;
-        private $cpf;
-        private $idade;
-        private $endereco;
-        private $email;
-        private $permissao;
-        private $registro;
-        private $prescricoes;
+    class Medico extends User{
+        private int $idmedico;
+        private string $registro;
+        private string $prescricoes;
+
+       
 
         /**
-         * Get the value of nome
+         * Get the value of idmedico
          */
-        public function getNome()
+        public function getIdmedico(): int
         {
-                return $this->nome;
+                return $this->idmedico;
         }
 
         /**
-         * Set the value of nome
+         * Set the value of idmedico
          */
-        public function setNome($nome): self
+        public function setIdmedico(int $idmedico): self
         {
-                $this->nome = $nome;
-
-                return $this;
-        }
-
-        /**
-         * Get the value of cpf
-         */
-        public function getCpf()
-        {
-                return $this->cpf;
-        }
-
-        /**
-         * Set the value of cpf
-         */
-        public function setCpf($cpf): self
-        {
-                $this->cpf = $cpf;
-
-                return $this;
-        }
-
-        /**
-         * Get the value of idade
-         */
-        public function getIdade()
-        {
-                return $this->idade;
-        }
-
-        /**
-         * Set the value of idade
-         */
-        public function setIdade($idade): self
-        {
-                $this->idade = $idade;
-
-                return $this;
-        }
-
-        /**
-         * Get the value of endereco
-         */
-        public function getEndereco()
-        {
-                return $this->endereco;
-        }
-
-        /**
-         * Set the value of endereco
-         */
-        public function setEndereco($endereco): self
-        {
-                $this->endereco = $endereco;
-
-                return $this;
-        }
-
-        /**
-         * Get the value of email
-         */
-        public function getEmail()
-        {
-                return $this->email;
-        }
-
-        /**
-         * Set the value of email
-         */
-        public function setEmail($email): self
-        {
-                $this->email = $email;
-
-                return $this;
-        }
-
-        /**
-         * Get the value of permissao
-         */
-        public function getPermissao()
-        {
-                return $this->permissao;
-        }
-
-        /**
-         * Set the value of permissao
-         */
-        public function setPermissao($permissao): self
-        {
-                $this->permissao = $permissao;
+                $this->idmedico = $idmedico;
 
                 return $this;
         }
@@ -121,7 +27,7 @@
         /**
          * Get the value of registro
          */
-        public function getRegistro()
+        public function getRegistro(): string
         {
                 return $this->registro;
         }
@@ -129,7 +35,7 @@
         /**
          * Set the value of registro
          */
-        public function setRegistro($registro): self
+        public function setRegistro(string $registro): self
         {
                 $this->registro = $registro;
 
@@ -139,7 +45,7 @@
         /**
          * Get the value of prescricoes
          */
-        public function getPrescricoes()
+        public function getPrescricoes(): string
         {
                 return $this->prescricoes;
         }
@@ -147,29 +53,10 @@
         /**
          * Set the value of prescricoes
          */
-        public function setPrescricoes($prescricoes): self
+        public function setPrescricoes(string $prescricoes): self
         {
                 $this->prescricoes = $prescricoes;
 
                 return $this;
         }
-
-        /**
-         * Get the value of id
-         */
-        public function getId()
-        {
-                return $this->id;
-        }
-
-        /**
-         * Set the value of id
-         */
-        public function setId($id): self
-        {
-                $this->id = $id;
-
-                return $this;
-        }
     }
-?>
