@@ -9,6 +9,7 @@
 <body>
 <?php 
         include_once('classes/FarmaciaClass.php');
+        include_once('classes/UserClass.php');
         
         session_start();
 
@@ -34,14 +35,15 @@
             }
 
             if($camposPreenchidos) {
-                $newFarmacia = new Farmacia;
-
-                $newFarmacia->setNome($_POST['nome']);
-                $newFarmacia->setEndereco($_POST['endereco']);
-                $newFarmacia->setEmail($_POST['email']);
-                $newFarmacia->setCnpj($_POST['cnpj']);
-
-                $newFarmacia->setPermissao("");
+                $newFarmacia = new Farmacia(
+                    0,
+                    $_POST['nome'],
+                    $_POST['cnpj'],
+                    "",
+                    $_POST['endereco'],
+                    $_POST['email'],
+                    0
+                );
 
                 $_SESSION['farmacias'][$_POST['cnpj']] = $newFarmacia;
             }

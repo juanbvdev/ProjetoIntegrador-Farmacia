@@ -10,9 +10,13 @@
 
 <body>
     <?php
-    session_start();
     include_once('classes/ClienteClass.php');
     include_once('classes/UserClass.php');
+    
+    session_start();
+    
+    // session_unset();
+    // header('Location: cad-clie.php');
 
     $indexForm = true;
 

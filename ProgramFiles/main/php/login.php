@@ -8,6 +8,7 @@
 </head>
 <body>
     <?php 
+        include_once('classes/UserClass.php');
         include_once('classes/MedicoClass.php');
         include_once('classes/FuncionarioClass.php');
         include_once('classes/ClienteClass.php');
@@ -37,7 +38,7 @@
 
             if(isset($_SESSION['medicos'])) {
                 foreach ($_SESSION['medicos'] as $med) {
-                    if($nome == $med->getNome() && $cpf == $med->getCpf()) {
+                    if($nome == $med->getNome() && $cpf == $med->getCpfCnpj()) {
                         return true;
                     }
                 }
@@ -50,7 +51,7 @@
 
             if(isset($_SESSION['clientes'])) {
                 foreach ($_SESSION['clientes'] as $client) {
-                    if($nome == $client->getNome() && $cpf == $client->getCpf()) {
+                    if($nome == $client->getNome() && $cpf == $client->getCpfCnpj()) {
                         return true;
                     }
                 }
@@ -63,7 +64,7 @@
 
             if(isset($_SESSION['funcionarios'])) {
                 foreach ($_SESSION['funcionarios'] as $funcionario) {
-                    if($nome == $funcionario->getNome() && $cpf == $funcionario->getCpf()) {
+                    if($nome == $funcionario->getNome() && $cpf == $funcionario->getCpfCnpj()) {
                         return true;
                     }
                 }

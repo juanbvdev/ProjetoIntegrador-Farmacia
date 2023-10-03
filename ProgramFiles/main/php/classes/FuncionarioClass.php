@@ -1,27 +1,15 @@
 <?php 
+    require_once('UserClass.php');
     class Funcionario extends User {
-        private int $id;
+        private int $idFuncionario;
         private string $atendimento;        
 
+        public function __construct($idFuncionario, $atendimento, $nome, $cpf_cnpj, $idade, $endereco, $email, $permissao) {
+                parent::__construct($nome, $cpf_cnpj, $idade, $endereco, $email, $permissao);
+                $this->$idFuncionario = $idFuncionario;
+                $this->$atendimento = $atendimento;
+        }
         
-
-        /**
-         * Get the value of id
-         */
-        public function getId(): int
-        {
-                return $this->id;
-        }
-
-        /**
-         * Set the value of id
-         */
-        public function setId(int $id): self
-        {
-                $this->id = $id;
-
-                return $this;
-        }
 
         /**
          * Get the value of atendimento
@@ -37,6 +25,24 @@
         public function setAtendimento(string $atendimento): self
         {
                 $this->atendimento = $atendimento;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of idFuncionario
+         */
+        public function getIdFuncionario(): int
+        {
+                return $this->idFuncionario;
+        }
+
+        /**
+         * Set the value of idFuncionario
+         */
+        public function setIdFuncionario(int $idFuncionario): self
+        {
+                $this->idFuncionario = $idFuncionario;
 
                 return $this;
         }

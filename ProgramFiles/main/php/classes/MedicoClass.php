@@ -1,10 +1,17 @@
-<?php 
-    class Medico extends User{
+<?php
+require_once('UserClass.php');
+class Medico extends User
+{
         private int $idmedico;
         private string $registro;
         private string $prescricoes;
 
-       
+        public function __construct($idmedico, $registro, $prescricoes, $nome, $cpf_cnpj, $idade, $endereco, $email, $permissao) {
+                parent::__construct($nome, $cpf_cnpj, $idade, $endereco, $email, $permissao);
+                $this->$idmedico = $idmedico;
+                $this->$registro = $registro;
+                $this->$prescricoes = $prescricoes;
+        }
 
         /**
          * Get the value of idmedico
@@ -59,4 +66,4 @@
 
                 return $this;
         }
-    }
+}

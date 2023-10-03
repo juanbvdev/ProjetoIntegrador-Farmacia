@@ -23,7 +23,7 @@
         }
 
         if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cadButton'])) {
-            $campos = array('nome', 'cpf', 'idade', 'endereco', 'email', 'registro');
+            $campos = array('nome', 'cpf', 'idade', 'endereco', 'email', '');
             $camposPreenchidos = true;
 
             foreach ($campos as $campo) {
@@ -34,16 +34,18 @@
             }
 
             if($camposPreenchidos) {
-                $newMedic = new Medico;
+                $newMedic = new Medico(
+                    0,
+                    "",
+                    "",
+                    $_POST['nome'],
+                    $_POST['cpf'],
+                    $_POST['idade'],
+                    $_POST['endereco'],
+                    $_POST['email'],
+                    0
+                );
 
-                $newMedic->setNome($_POST['nome']);
-                $newMedic->setCpf($_POST['cpf']);
-                $newMedic->setIdade($_POST['idade']);
-                $newMedic->setEndereco($_POST['endereco']);
-                $newMedic->setEmail($_POST['email']);
-                $newMedic->setRegistro($_POST['registro']);
-
-                $newMedic->setPermissao("");
                 $newMedic->setPrescricoes("");
 
                 $_SESSION['medicos'][$_POST['cpf']] = $newMedic;
