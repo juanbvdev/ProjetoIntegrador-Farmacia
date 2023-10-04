@@ -6,14 +6,16 @@ private int $idade;
 private string $endereco;
 private string $email;
 private int $permissao;
+private string $senha;
 
-public function __construct($nome, $cpf_cnpj, $idade, $endereco, $email, $permissao) {
+public function __construct($nome, $cpf_cnpj, $idade, $endereco, $email, $permissao, $senha) {
     $this->nome = $nome;
     $this->cpf_cnpj = $cpf_cnpj;
     $this->idade = $idade;
     $this->endereco = $endereco;
     $this->email = $email;
     $this->permissao = $permissao;
+    $this->senha = $senha;
 }
 
 /**
@@ -120,6 +122,24 @@ return $this->permissao;
 public function setPermissao(int $permissao): self
 {
 $this->permissao = $permissao;
+
+return $this;
+}
+
+/**
+ * Get the value of senha
+ */
+public function getSenha(): string
+{
+return $this->senha;
+}
+
+/**
+ * Set the value of senha
+ */
+public function setSenha(string $senha): self
+{
+$this->senha = $senha;
 
 return $this;
 }

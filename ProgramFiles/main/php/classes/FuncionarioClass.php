@@ -4,8 +4,8 @@
         private int $idFuncionario;
         private string $atendimento;        
 
-        public function __construct($idFuncionario, $atendimento, $nome, $cpf_cnpj, $idade, $endereco, $email, $permissao) {
-                parent::__construct($nome, $cpf_cnpj, $idade, $endereco, $email, $permissao);
+        public function __construct($idFuncionario, $atendimento, $nome, $cpf_cnpj, $idade, $endereco, $email, $permissao, $senha) {
+                parent::__construct($nome, $cpf_cnpj, $idade, $endereco, $email, $permissao, $senha);
                 $this->$idFuncionario = $idFuncionario;
                 $this->$atendimento = $atendimento;
         }

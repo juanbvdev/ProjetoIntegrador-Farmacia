@@ -3,8 +3,8 @@
     class Farmacia extends User {
         private int $idfarmacia;     
 
-        public function __construct($idfarmacia, $nome, $cpf_cnpj, $idade, $endereco, $email, $permissao) {
-                parent::__construct($nome, $cpf_cnpj, $idade, $endereco, $email, $permissao);
+        public function __construct($idfarmacia, $nome, $cpf_cnpj, $idade, $endereco, $email, $permissao, $senha) {
+                parent::__construct($nome, $cpf_cnpj, $idade, $endereco, $email, $permissao, $senha);
                 $this->$idfarmacia = $idfarmacia;
         }
 

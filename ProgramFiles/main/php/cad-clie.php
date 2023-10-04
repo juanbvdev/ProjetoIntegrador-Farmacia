@@ -10,13 +10,9 @@
 
 <body>
     <?php
+    session_start();
     include_once('classes/ClienteClass.php');
     include_once('classes/UserClass.php');
-    
-    session_start();
-    
-    // session_unset();
-    // header('Location: cad-clie.php');
 
     $indexForm = true;
 
@@ -25,7 +21,7 @@
     }
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cadButton'])) {
-        $campos = array('nome', 'cpf', 'idade', 'endereco', 'email');
+        $campos = array('nome', 'cpf', 'idade', 'endereco', 'email', 'senha');
         $camposPreenchidos = true;
 
         foreach ($campos as $campo) {
@@ -45,7 +41,8 @@
                 $_POST['idade'],
                 $_POST['endereco'],
                 $_POST['email'],
-                0
+                0,
+                $_POST['senha']
             );
 
             $_SESSION['clientes'][$_POST['cpf']] = $newClient;
@@ -56,43 +53,48 @@
     <?php if ($indexForm) { ?>
         <form action="cad-clie.php" method="post">
             <table>
-                <h2>Cadastro de Cliente</h2>
+                <h1>Cadastro de Cliente</h1>
                 <td>
                     <tr>
                         <td>
                             <h2>Nome</h2>
                         </td>
-                        <td><input type="text" name="nome" placeholder="Nome"></td>
+                        <td><input type="text" name="nome" placeholder="Informe seu nome"></td>
                     </tr>
                     <tr>
                         <td>
                             <h2>CPF</h2>
                         </td>
-                        <td><input type="text" name="cpf" placeholder="CPF"></td>
+                        <td><input type="text" name="cpf" placeholder="Informe seu CPF (Apenas números!!!)"></td>
                     </tr>
                     <tr>
                         <td>
                             <h2>Idade</h2>
                         </td>
-                        <td><input type="text" name="idade" placeholder="Idade"></td>
+                        <td><input type="text" name="idade" placeholder="Informe sua Idade"></td>
                     </tr>
                     <tr>
                         <td>
                             <h2>Endereço</h2>
                         </td>
-                        <td><input type="text" name="endereco" placeholder="Endereço"></td>
+                        <td><input type="text" name="endereco" placeholder="Informe seu Endereço"></td>
                     </tr>
                     <tr>
                         <td>
                             <h2>Email</h2>
                         </td>
-                        <td><input type="text" name="email" placeholder="Email"></td>
+                        <td><input type="text" name="email" placeholder="Informe seu Email"></td>
                     </tr>
-                    <div class="button-container">
-                <th><input type="submit" name="cadButton" value="Cadastrar" class="menu-button"></th>
-                </div>
-                </td>
+                    <tr>
+                        <td>
+                            <h2>Senha</h2>
+                        </td>
+                        <td><input type="password" name="senha" placeholder="Crie uma senha"></td>
+                    </tr>
+                    
+                    </td>  
             </table>
+            <input type="submit" name="cadButton" value="Cadastrar" class="account-button2">
         </form>
     <?php } ?>
 

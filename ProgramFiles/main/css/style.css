@@ -27,6 +27,7 @@ a {
     /* Verde */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     /* Sombra suave */
+    width: 40%;
 }
 
 table,
@@ -34,12 +35,23 @@ th,
 td {
     padding: 15px;
 }
+table{
+ align-content: center;
+ margin-top: 5%;
+ margin-left: 30%;
+}
+
+.table-menu{
+    align-content: center;
+    margin-bottom: 5%;
+    margin-left: 0%;
+   }
 
 
 input[type="text"],
 input[type="number"],
 input[type="password"] {
-    width: 80%;
+    width: 100%;
     height: 20px;
     padding: 10px;
     background: #fff;
@@ -68,17 +80,20 @@ input[type="password"] {
     /* Sombra suave */
 }
 
-.button-container {
+.button-container, ::placeholder {
     text-align: center;
 }
 
 .column {
+    align-content: center;
     display: inline-block;
     margin: 0 10px;
 }
 
 .third-column {
+    align-content: center;
     margin-top: 20px;
+    text-align: center;
 }
 
 .account-button {
@@ -97,28 +112,32 @@ input[type="password"] {
 }
 
 .account-button2 {
-    width: 180px;
+    display: inline-block;
+    width: 40.5%;
     height: 40px;
     background-color: #fff;
     color: #00a86b;
     /* Verde */
     text-align: center;
+    line-height: 42px;
+    text-decoration: none;
+    margin-top: 20px;
     border: none;
-    border-radius: 25px;
     cursor: pointer;
-    margin: 10px auto;
+    border-radius: 25px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     /* Sombra suave */
 }
 
 .menu-button2 {
     display: inline-block;
-    width: 13.5%;
+    width: 40.5%;
     height: 40px;
     background-color: #fff;
     color: #00a86b;
     /* Verde */
     text-align: center;
+    font-size: 90%;
     line-height: 42px;
     text-decoration: none;
     margin: 20px;
