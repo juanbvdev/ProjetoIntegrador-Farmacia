@@ -23,7 +23,7 @@
         }
 
         if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cadButton'])) {
-            $campos = array('nome', 'cpf', 'idade', 'endereco', 'email', '');
+            $campos = array('nome', 'cpf', 'idade', 'endereco', 'email', 'registro');
             $camposPreenchidos = true;
 
             foreach ($campos as $campo) {
@@ -34,6 +34,7 @@
             }
 
             if($camposPreenchidos) {
+                echo'campos';
                 $newMedic = new Medico(
                     0,
                     "",
@@ -46,22 +47,13 @@
                     0
                 );
 
-                $newMedic->setPrescricoes("");
-
                 $_SESSION['medicos'][$_POST['cpf']] = $newMedic;
-            }
-        }
 
-        if(isset($_POST['vMedic'])) {
-            foreach ($_SESSION['medicos'] as $med) {
-                echo $med->getNome();
+                header('Location: ../html/index.html');
+                exit;
             }
         }
     ?>
-
-    <form action="cad-med.php" method="post">
-        <input type="submit" name="vMedic" value="ver médicos">
-    </form>
     
     <?php 
         if($indexForm) { ?>

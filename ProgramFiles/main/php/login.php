@@ -17,9 +17,13 @@
 
         $indexForm = true;
 
+        if(!isset($_SESSION['logInfo'])) {
+            $_SESSION['logInfo'] = array();
+        }
+
         if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['logButton'])) {
-            $nome = $_POST['nome'];
-            $cpf = $_POST['cpf'];
+            $nome && $_SESSION['logInfo'][0] = $_POST['nome'];
+            $cpf && $_SESSION['logInfo'][1] = $_POST['cpf'];
             
             if(findMedic($nome, $cpf)) {
                 echo 'medico logado';

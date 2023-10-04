@@ -49,6 +49,9 @@
             );
 
             $_SESSION['clientes'][$_POST['cpf']] = $newClient;
+
+            header('Location: ../html/index.html');
+            exit;
         }
     }
     ?>

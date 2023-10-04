@@ -39,26 +39,21 @@
                     0,
                     $_POST['nome'],
                     $_POST['cnpj'],
-                    "",
+                    0,
                     $_POST['endereco'],
                     $_POST['email'],
                     0
                 );
 
                 $_SESSION['farmacias'][$_POST['cnpj']] = $newFarmacia;
+
+                header('Location: ../html/index.html');
+                exit;
             }
         }
 
-        if(isset($_POST['vFarm'])) {
-            foreach ($_SESSION['farmacias'] as $farm) {
-                echo $farm->getNome();
-            }
-        }
     ?>
 
-    <form action="cad-farm.php" method="post">
-        <input type="submit" name="vFarm" value="ver farmacias">
-    </form>
     <?php 
         if($indexForm) { ?>
             <form action="cad-farm.php" method="post">
