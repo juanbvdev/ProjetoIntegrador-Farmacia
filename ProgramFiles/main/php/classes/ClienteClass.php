@@ -7,9 +7,9 @@ class Cliente extends User
         private string $receitas;
 
 
-        public function __construct($idcliente, $retiradas, $receitas, $nome, $cpf_cnpj, $idade, $endereco, $email, $permissao)
+        public function __construct($idcliente, $retiradas, $receitas, $nome, $cpf_cnpj, $idade, $endereco, $email, $permissao,$senha)
         {
-                parent::__construct($nome, $cpf_cnpj, $idade, $endereco, $email, $permissao);
+                parent::__construct($nome, $cpf_cnpj, $idade, $endereco, $email, $permissao, $senha);
                 $this->idcliente = $idcliente;
                 $this->retiradas = $retiradas;
                 $this->receitas = $receitas;

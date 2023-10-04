@@ -6,8 +6,8 @@ class Medico extends User
         private string $registro;
         private string $prescricoes;
 
-        public function __construct($idmedico, $registro, $prescricoes, $nome, $cpf_cnpj, $idade, $endereco, $email, $permissao) {
-                parent::__construct($nome, $cpf_cnpj, $idade, $endereco, $email, $permissao);
+        public function __construct($idmedico, $registro, $prescricoes, $nome, $cpf_cnpj, $idade, $endereco, $email, $permissao, $senha) {
+                parent::__construct($nome, $cpf_cnpj, $idade, $endereco, $email, $permissao, $senha);
                 $this->$idmedico = $idmedico;
                 $this->$registro = $registro;
                 $this->$prescricoes = $prescricoes;

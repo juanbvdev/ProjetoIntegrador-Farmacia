@@ -1,79 +1,114 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
     <title>Cadastro de Farmácia</title>
 </head>
+
 <body>
-<?php 
-        include_once('classes/FarmaciaClass.php');
-        include_once('classes/UserClass.php');
-        
-        session_start();
+    <?php
+    include_once('classes/FarmaciaClass.php');
+    include_once('classes/UserClass.php');
 
-        // reset do server e da pagina
-        // session_unset();
-        // header('Location: cad-farm.php');
+    session_start();
 
-        $indexForm = true;
-        
-        if(!isset($_SESSION['farmacias'])) {
-            $_SESSION['farmacias'] = array();
-        }
+    // reset do server e da pagina
+    // session_unset();
+    // header('Location: cad-farm.php');
 
-        if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cadButton'])) {
-            $campos = array('nome', 'endereco', 'email', 'cnpj');
-            $camposPreenchidos = true;
+    $indexForm = true;
 
-            foreach ($campos as $campo) {
-                if (!isset($_POST[$campo]) || empty($_POST[$campo])) {
-                    $camposPreenchidos = false;
-                    break;
-                }
-            }
+    if (!isset($_SESSION['farmacias'])) {
+        $_SESSION['farmacias'] = array();
+    }
 
-            if($camposPreenchidos) {
-                $newFarmacia = new Farmacia(
-                    0,
-                    $_POST['nome'],
-                    $_POST['cnpj'],
-                    0,
-                    $_POST['endereco'],
-                    $_POST['email'],
-                    0
-                );
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cadButton'])) {
+        $campos = array('nome', 'endereco', 'email', 'cnpj', 'senha');
+        $camposPreenchidos = true;
 
-                $_SESSION['farmacias'][$_POST['cnpj']] = $newFarmacia;
-
-                header('Location: ../html/index.html');
-                exit;
+        foreach ($campos as $campo) {
+            if (!isset($_POST[$campo]) || empty($_POST[$campo])) {
+                $camposPreenchidos = false;
+                break;
             }
         }
 
+        if ($camposPreenchidos) {
+            $newFarmacia = new Farmacia(
+                0,
+                $_POST['nome'],
+                $_POST['cnpj'],
+                0,
+                $_POST['endereco'],
+                $_POST['email'],
+                0,
+                $_POST['senha']
+            );
+
+            $_SESSION['farmacias'][$_POST['cnpj']] = $newFarmacia;
+        }
+    }
+
+    if (isset($_POST['vFarm'])) {
+        foreach ($_SESSION['farmacias'] as $farm) {
+            echo $farm->getNome();
+        }
+    }
     ?>
 
-    <?php 
-        if($indexForm) { ?>
-            <form action="cad-farm.php" method="post">
-                <table>
-                    <td><div class="button-container">
-                        <div class="column">
-                            <h2>Cadastro de Farmacias</h2>
-                            <input type="text" name="nome" placeholder="Nome">
-                            <input type="text" name="endereco" placeholder="Endereço">
-                            <input type="text" name="email" placeholder="Email">
-                            <input type="text" name="cnpj" placeholder="CNPJ">
-                        </div>
-                        <div class="third-column">
-                            <input type="submit" name="cadButton" value="Cadastrar" class="menu-button">
-                        </div>
-                    </div></td>
-                </table>
-            </form>
-        <?php }?>
+    <form action="cad-farm.php" method="post">
+        <input type="submit" name="vFarm" value="ver farmacias">
+    </form>
+    <?php
+    if ($indexForm) { ?>
+        <form action="cad-farm.php" method="post">
+            <table>
+                <h1>Cadastro de Farmacias</h1>
+                <td>
+                    <tr>
+                        <td>
+                            <h2>Nome</h2>
+                        </td>
+                        <td><input type="text" name="nome" placeholder="Informe o nome"></td>
+                    </tr>
+                <td>
+                    <tr>
+                        <td>
+                            <h2>Endereço</h2>
+                        </td>
+                        <td><input type="text" name="endereco" placeholder="Informe o endereço"></td>
+                    </tr>
+                <td>
+                    <tr>
+                        <td>
+                            <h2>Email</h2>
+                        </td>
+                        <td><input type="text" name="email" placeholder="Informe o email"></td>
+                    </tr>
+                <td>
+                    <tr>
+                        <td>
+                            <h2>CNPJ</h2>
+                        </td>
+                        <td><input type="text" name="cnpj" placeholder="Informe o CNPJ (Apenas números!!!)"></td>
+                    </tr>
+                <td>
+                    <tr>
+                        <td>
+                            <h2>Senha</h2>
+                        </td>
+                        <td><input type="password" name="senha" placeholder="Crie uma senha"></td>
+                    </tr>
+                </td>
+            </table>
+            <input type="submit" name="cadButton" value="Cadastrar" class="account-button2">
+        </form>
+    <?php } ?>
 
     <a href="../html/index.html" class="menu-button2">Voltar</a>
 </body>
+
 </html>
