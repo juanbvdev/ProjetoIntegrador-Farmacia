@@ -62,6 +62,22 @@ input[type="password"] {
     border-radius: 25px;
 }
 
+.button-container, ::placeholder {
+    text-align: center;
+}
+
+.column {
+    align-content: center;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.third-column {
+    align-content: center;
+    margin-top: 20px;
+    text-align: center;
+}
+
 .menu-button {
     display: inline-block;
     width: 80%;
@@ -80,20 +96,23 @@ input[type="password"] {
     /* Sombra suave */
 }
 
-.button-container, ::placeholder {
-    text-align: center;
-}
-
-.column {
-    align-content: center;
+.menu-button2 {
     display: inline-block;
-    margin: 0 10px;
-}
-
-.third-column {
-    align-content: center;
-    margin-top: 20px;
+    width: 40.5%;
+    height: 40px;
+    background-color: #fff;
+    color: #00a86b;
+    /* Verde */
     text-align: center;
+    font-size: 90%;
+    line-height: 42px;
+    text-decoration: none;
+    margin: 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Sombra suave */
 }
 
 .account-button {
@@ -129,72 +148,21 @@ input[type="password"] {
     /* Sombra suave */
 }
 
-.menu-button2 {
-    display: inline-block;
-    width: 40.5%;
-    height: 40px;
-    background-color: #fff;
-    color: #00a86b;
-    /* Verde */
-    text-align: center;
-    font-size: 90%;
-    line-height: 42px;
-    text-decoration: none;
-    margin: 20px;
-    border: none;
-    cursor: pointer;
-    border-radius: 25px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    /* Sombra suave */
-}
-
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.7);
-}
-
-.modal-content {
-    background-color: #fff;
-    margin: 15% auto;
-    padding: 20px;
-    border-radius: 5px;
-    width: 80%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.invalid-cpf {
-    border: 2px solid red;
-    color: red;
-}
-
-/* ... (seu código CSS anterior) ... */
-
 .menu-button:hover,
 .menu-button:focus {
-    background-color: #009960;
+    background-color: #ffffff;
     /* Cor alterada no hover */
+    color: #00a86b;
+    /* Texto fica verde no hover */
     transition: background-color 0.3s;
 }
 
 .account-button:hover,
 .account-button:focus {
-    background-color: #009960;
+    background-color: #ffffff;
     /* Cor alterada no hover */
+    color: #00a86b;
+    /* Texto fica verde no hover */
     transition: background-color 0.3s;
 }
 
@@ -215,5 +183,3 @@ input[type="password"] {
     /* Texto fica branco no hover */
     transition: background-color 0.3s, color 0.3s;
 }
-
-/* ... (seu código CSS posterior) ... */
