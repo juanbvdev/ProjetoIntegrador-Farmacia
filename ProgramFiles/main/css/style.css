@@ -1,7 +1,6 @@
 body {
     background-color: #00a86b;
-    /* Verde para representar saúde */
-    font-family: 'Helvetica Neue', sans-serif;
+    font-family: 'Segoe UI';
     text-align: center;
     margin: 0;
     padding: 0;
@@ -9,12 +8,25 @@ body {
 
 th {
     color: #00a86b;
-    /* Verde */
 }
 
 h1 {
     color: #fff;
-    /* Texto branco */
+    width: 100%;
+}
+
+h2 {
+    width: 100%;
+    margin-block: auto;
+    margin-inline: auto;
+    font-size: 100%;
+
+
+}
+
+td {
+    padding: 1% 1%;
+    font-size: 100%;
 }
 
 table,
@@ -22,11 +34,8 @@ a {
     margin: 0 auto;
     border-radius: 20px;
     background-color: #fff;
-    /* Fundo branco */
     color: #00a86b;
-    /* Verde */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    /* Sombra suave */
     width: 40%;
 }
 
@@ -35,17 +44,18 @@ th,
 td {
     padding: 15px;
 }
-table{
- align-content: center;
- margin-top: 5%;
- margin-left: 30%;
+
+table {
+    align-content: center;
+    margin-top: 5%;
+    margin-left: 30%;
 }
 
-.table-menu{
+.table-menu {
     align-content: center;
     margin-bottom: 5%;
     margin-left: 0%;
-   }
+}
 
 
 input[type="text"],
@@ -56,13 +66,14 @@ input[type="password"] {
     padding: 10px;
     background: #fff;
     border: 1px solid #00a86b;
-    /* Verde */
     color: #000;
     margin: 10px 0;
     border-radius: 25px;
+    font-family: Tahoma, sans-serif;
 }
 
-.button-container, ::placeholder {
+.button-container,
+::placeholder {
     text-align: center;
 }
 
@@ -83,7 +94,6 @@ input[type="password"] {
     width: 80%;
     height: 50px;
     background-color: #00a86b;
-    /* Verde */
     color: #fff;
     text-align: center;
     line-height: 50px;
@@ -93,7 +103,6 @@ input[type="password"] {
     cursor: pointer;
     border-radius: 25px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    /* Sombra suave */
 }
 
 .menu-button2 {
@@ -102,7 +111,6 @@ input[type="password"] {
     height: 40px;
     background-color: #fff;
     color: #00a86b;
-    /* Verde */
     text-align: center;
     font-size: 90%;
     line-height: 42px;
@@ -112,14 +120,12 @@ input[type="password"] {
     cursor: pointer;
     border-radius: 25px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    /* Sombra suave */
 }
 
 .account-button {
     width: 180px;
     height: 40px;
     background-color: #00a86b;
-    /* Verde */
     color: #fff;
     text-align: center;
     border: none;
@@ -127,7 +133,6 @@ input[type="password"] {
     cursor: pointer;
     margin: 10px auto;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    /* Sombra suave */
 }
 
 .account-button2 {
@@ -136,7 +141,6 @@ input[type="password"] {
     height: 40px;
     background-color: #fff;
     color: #00a86b;
-    /* Verde */
     text-align: center;
     line-height: 42px;
     text-decoration: none;
@@ -145,41 +149,32 @@ input[type="password"] {
     cursor: pointer;
     border-radius: 25px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    /* Sombra suave */
 }
 
 .menu-button:hover,
 .menu-button:focus {
     background-color: #ffffff;
-    /* Cor alterada no hover */
     color: #00a86b;
-    /* Texto fica verde no hover */
     transition: background-color 0.3s;
 }
 
 .account-button:hover,
 .account-button:focus {
     background-color: #ffffff;
-    /* Cor alterada no hover */
     color: #00a86b;
-    /* Texto fica verde no hover */
     transition: background-color 0.3s;
 }
 
 .account-button2:hover,
 .account-button2:focus {
     background-color: #00a86b;
-    /* Cor alterada no hover */
     color: #fff;
-    /* Texto fica branco no hover */
     transition: background-color 0.3s, color 0.3s;
 }
 
 .menu-button2:hover,
 .menu-button2:focus {
     background-color: #00a86b;
-    /* Cor alterada no hover */
     color: #fff;
-    /* Texto fica branco no hover */
     transition: background-color 0.3s, color 0.3s;
 }
