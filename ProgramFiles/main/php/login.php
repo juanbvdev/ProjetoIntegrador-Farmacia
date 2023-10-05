@@ -17,26 +17,30 @@
 
     session_start();
 
-    $indexForm = true;
+        $indexForm = true;
 
-    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['logButton'])) {
-        $nome = $_POST['nome'];
-        $cpf = $_POST['cpf'];
+        if(!isset($_SESSION['logInfo'])) {
+            $_SESSION['logInfo'] = array();
+        }
 
-        if (findMedic($nome, $cpf)) {
-            echo 'medico logado';
+        if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['logButton'])) {
+            $nome && $_SESSION['logInfo'][0] = $_POST['nome'];
+            $cpf && $_SESSION['logInfo'][1] = $_POST['cpf'];
             
+            if(findMedic($nome, $cpf)) {
+                echo 'medico logado';
+            }
+            if(findClient($nome, $cpf)) {
+                echo 'cliente logado';
+            }
+            if(findFuncionario($nome, $cpf)) {
+                echo 'funcionario logado';
+            }
         }
-        if (findClient($nome, $cpf)) {
-            echo 'cliente logado';
-        }
-        if (findFuncionario($nome, $cpf)) {
-            echo 'funcionario logado';
-        }
-    }
-    
-    function findMedic(string $nome, string $cpf): bool
-    {
+    ?>
+
+    <?php 
+        function findMedic(string $nome, string $cpf) : bool {
 
         if (isset($_SESSION['medicos'])) {
             foreach ($_SESSION['medicos'] as $med) {
