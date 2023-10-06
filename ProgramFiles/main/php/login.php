@@ -9,40 +9,19 @@
 </head>
 
 <body>
+    
+    
     <?php
-    include_once('classes/UserClass.php');
-    include_once('classes/MedicoClass.php');
-    include_once('classes/FuncionarioClass.php');
-    include_once('classes/ClienteClass.php');
+        include_once('classes/UserClass.php');
+        include_once('classes/MedicoClass.php');
+        include_once('classes/FuncionarioClass.php');
+        include_once('classes/ClienteClass.php');
 
-    session_start();
+        session_start();
 
-        $indexForm = true;
-
-        if(!isset($_SESSION['logInfo'])) {
-            $_SESSION['logInfo'] = array();
-        }
-
-        if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['logButton'])) {
-            $nome && $_SESSION['logInfo'][0] = $_POST['nome'];
-            $cpf && $_SESSION['logInfo'][1] = $_POST['cpf'];
-            
-            if(findMedic($nome, $cpf)) {
-                echo 'medico logado';
-            }
-            if(findClient($nome, $cpf)) {
-                echo 'cliente logado';
-            }
-            if(findFuncionario($nome, $cpf)) {
-                echo 'funcionario logado';
-            }
-        }
-    ?>
-
-    <?php 
         function findMedic(string $nome, string $cpf) : bool {
 
-        if (isset($_SESSION['medicos'])) {
+            if (isset($_SESSION['medicos'])) {
             foreach ($_SESSION['medicos'] as $med) {
                 if ($nome == $med->getNome() && $cpf == $med->getCpfCnpj()) {
                     return true;
@@ -80,6 +59,37 @@
 
         return false;
     }
+        
+        $indexForm = true;
+
+        $nome = "";
+        $cpf = "";
+        $senha = "";
+
+        if(!isset($_SESSION['logInfo'])) {
+            $_SESSION['logInfo'] = array();
+        }
+
+        if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['logButton'])) {
+            $nome = $_POST['nome'];
+            
+            $cpf = $_POST['cpf'];
+            $_SESSION['logInfo'][0] = $_POST['cpf'];
+            
+            $senha = $_POST['senha'];
+            
+            if(findMedic($nome, $cpf)) {
+                header('Location: screen-med.php');
+                exit();
+            }
+            if(findClient($nome, $cpf)) {
+                header('Location: screen-clie.php');
+                exit();
+            }
+            if(findFuncionario($nome, $cpf)) {
+                echo 'funcionario logado';
+            }
+        }
     ?>
 
     <?php
