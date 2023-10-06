@@ -3,9 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FPB - Cadastro Cliente</title>
     <link rel="stylesheet" href="../css/style.css">
-    <title>Cadastro de Cliente</title>
+    <link rel="icon" href="../css/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -57,7 +58,7 @@
         <form action="cad-clie.php" method="post">
             <table>
                 <h1>Cadastro de Cliente</h1>
-                <td>
+                <td>                   
                     <tr>
                         <td>
                             <h2>Nome</h2>
@@ -93,8 +94,7 @@
                             <h2>Senha</h2>
                         </td>
                         <td><input type="password" name="senha" placeholder="Crie uma senha"></td>
-                    </tr>
-                    
+                    </tr>              
                     </td>  
             </table>
             <input type="submit" name="cadButton" value="Cadastrar" class="account-button2">
