@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FPB - Cadastro Farmacia</title>
     <link rel="stylesheet" href="../css/style.css">
-    <title>Cadastro de Farmácia</title>
+    <link rel="icon" href="../css/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -74,28 +75,24 @@
                         </td>
                         <td><input type="text" name="nome" placeholder="Informe o nome"></td>
                     </tr>
-                <td>
                     <tr>
                         <td>
                             <h2>Endereço</h2>
                         </td>
                         <td><input type="text" name="endereco" placeholder="Informe o endereço"></td>
                     </tr>
-                <td>
                     <tr>
                         <td>
                             <h2>Email</h2>
                         </td>
                         <td><input type="text" name="email" placeholder="Informe o email"></td>
                     </tr>
-                <td>
                     <tr>
                         <td>
                             <h2>CNPJ</h2>
                         </td>
                         <td><input type="text" name="cnpj" placeholder="Informe o CNPJ (Apenas números!!!)"></td>
                     </tr>
-                <td>
                     <tr>
                         <td>
                             <h2>Senha</h2>
@@ -103,6 +100,7 @@
                         <td><input type="password" name="senha" placeholder="Crie uma senha"></td>
                     </tr>
                 </td>
+
             </table>
             <input type="submit" name="cadButton" value="Cadastrar" class="account-button2">
         </form>

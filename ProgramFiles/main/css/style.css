@@ -178,3 +178,187 @@ input[type="password"] {
     color: #fff;
     transition: background-color 0.3s, color 0.3s;
 }
+
+/* body {
+    background-color: #EC2124;
+    font-family: 'Segoe UI';
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+th {
+    color: #00a86b;
+}
+
+h1 {
+    color: #fff;
+    width: 100%;
+}
+
+h2 {
+    width: 100%;
+    margin-block: auto;
+    margin-inline: auto;
+    font-size: 100%;
+}
+
+h1{
+    color: #4ab2e8;
+}
+
+td {
+    padding: 1% 1%;
+    font-size: 100%;
+}
+
+table,
+a {
+    margin: 0 auto;
+    border-radius: 20px;
+    background-color: #47B54A;
+    color: #415BAB;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 40%;
+}
+
+table,
+th,
+td {
+    padding: 15px;
+}
+
+table {
+    align-content: center;
+    margin-top: 5%;
+    margin-left: 30%;
+}
+
+.table-menu {
+    align-content: center;
+    margin-bottom: 5%;
+    margin-left: 0%;
+}
+
+
+input[type="text"],
+input[type="number"],
+input[type="password"] {
+    width: 100%;
+    height: 20px;
+    padding: 10px;
+    background: #40aa42;
+    border: 1px solid #FFD007;
+    color: #000;
+    margin: 10px 0;
+    border-radius: 25px;
+    font-family: Tahoma, sans-serif;
+}
+
+.button-container,
+::placeholder {
+    text-align: center;
+    color: #000;
+}
+
+.column {
+    align-content: center;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.third-column {
+    align-content: center;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.menu-button {
+    display: inline-block;
+    width: 80%;
+    height: 50px;
+    background-color: #FFD007;
+    color: #415BAB;
+    text-align: center;
+    line-height: 50px;
+    text-decoration: none;
+    margin: 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.menu-button2 {
+    display: inline-block;
+    width: 40.5%;
+    height: 40px;
+    background-color: #47B54A;
+    color: #FFD007;
+    text-align: center;
+    font-size: 90%;
+    line-height: 42px;
+    text-decoration: none;
+    margin: 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.account-button {
+    width: 180px;
+    height: 40px;
+    background-color: #FFD007;
+    color: #415BAB;
+    text-align: center;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    margin: 10px auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.account-button2 {
+    display: inline-block;
+    width: 40.5%;
+    height: 40px;
+    background-color: #47B54A;
+    color: #FFD007;
+    text-align: center;
+    line-height: 42px;
+    text-decoration: none;
+    margin-top: 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.menu-button:hover,
+.menu-button:focus {
+    background-color: #47B54A;
+    color: #FFD007;
+    transition: background-color 0.3s;
+}
+
+.account-button:hover,
+.account-button:focus {
+    background-color: #47B54A;
+    color: #FFD007;
+    transition: background-color 0.3s;
+}
+
+.account-button2:hover,
+.account-button2:focus {
+    background-color: #FFD007;
+    color: #47B54A;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.menu-button2:hover,
+.menu-button2:focus {
+    background-color: #FFD007;
+    color: #47B54A;
+    transition: background-color 0.3s, color 0.3s;
+} */
