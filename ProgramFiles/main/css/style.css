@@ -1,9 +1,8 @@
 body {
     background-color: #00a86b;
     font-family: 'Segoe UI';
-    text-align: center;
-    margin: 0;
-    padding: 0;
+    margin-block: 0;
+
 }
 
 th {
@@ -13,19 +12,20 @@ th {
 h1 {
     color: #fff;
     width: 100%;
+    text-align: center;
+    margin: 0px;
 }
 
 h2 {
     width: 100%;
     margin-block: auto;
     margin-inline: auto;
-    font-size: 100%;
+    font-size: 110%;
 
 
 }
 
 td {
-    padding: 1% 1%;
     font-size: 100%;
 }
 
@@ -39,16 +39,21 @@ a {
     width: 40%;
 }
 
-table,
+
 th,
 td {
-    padding: 15px;
+    padding: 5px;
+    padding-left: 1px;
 }
 
 table {
     align-content: center;
-    margin-top: 5%;
+    margin-top: 2%;
     margin-left: 30%;
+    padding-bottom: 0%;
+    padding-top: 0%;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .table-menu {
@@ -67,7 +72,8 @@ input[type="password"] {
     background: #fff;
     border: 1px solid #00a86b;
     color: #000;
-    margin: 10px 0;
+    margin-top: 10px 0;
+    padding-right: 5px;
     border-radius: 25px;
     font-family: Tahoma, sans-serif;
 }
@@ -79,17 +85,17 @@ input[type="password"] {
 
 .column {
     align-content: center;
-    display: inline-block;
-    margin: 0 10px;
-}
-
-.third-column {
-    align-content: center;
     margin-top: 20px;
     text-align: center;
 }
 
+.third-column {
+    align-content: center;
+    text-align: center;
+}
+
 .menu-button {
+    font-family: 'Segoe UI';
     display: inline-block;
     width: 80%;
     height: 50px;
@@ -98,16 +104,18 @@ input[type="password"] {
     text-align: center;
     line-height: 50px;
     text-decoration: none;
-    margin: 20px;
+    margin: 15px;
     border: none;
     cursor: pointer;
     border-radius: 25px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1px;
 }
 
 .menu-button2 {
+    font-family: 'Segoe UI';
     display: inline-block;
-    width: 40.5%;
+    width: 40%;
     height: 40px;
     background-color: #fff;
     color: #00a86b;
@@ -120,24 +128,33 @@ input[type="password"] {
     cursor: pointer;
     border-radius: 25px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-left: 30%;
+    margin-right: 0%;
+    margin-bottom: 1px;
 }
 
 .account-button {
-    width: 180px;
-    height: 40px;
+    font-family: 'Segoe UI';
+    display: inline-block;
+    width: 80%;
+    height: 50px;
     background-color: #00a86b;
     color: #fff;
     text-align: center;
+    line-height: 50px;
+    text-decoration: none;
+    margin: 15px;
     border: none;
-    border-radius: 25px;
     cursor: pointer;
-    margin: 10px auto;
+    border-radius: 25px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
 }
 
 .account-button2 {
+    font-family: 'Segoe UI';
     display: inline-block;
-    width: 40.5%;
+    width: 40%;
     height: 40px;
     background-color: #fff;
     color: #00a86b;
@@ -149,6 +166,7 @@ input[type="password"] {
     cursor: pointer;
     border-radius: 25px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-left: 30%;
 }
 
 .menu-button:hover,

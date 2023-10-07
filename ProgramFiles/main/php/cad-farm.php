@@ -65,45 +65,45 @@
     </form>
     <?php
     if ($indexForm) { ?>
-        <form action="cad-farm.php" method="post">
-            <table>
-                <h1>Cadastro de Farmacias</h1>
-                <td>
-                    <tr>
-                        <td>
-                            <h2>Nome</h2>
-                        </td>
-                        <td><input type="text" name="nome" placeholder="Informe o nome"></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <h2>Endereço</h2>
-                        </td>
-                        <td><input type="text" name="endereco" placeholder="Informe o endereço"></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <h2>Email</h2>
-                        </td>
-                        <td><input type="text" name="email" placeholder="Informe o email"></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <h2>CNPJ</h2>
-                        </td>
-                        <td><input type="text" name="cnpj" placeholder="Informe o CNPJ (Apenas números!!!)"></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <h2>Senha</h2>
-                        </td>
-                        <td><input type="password" name="senha" placeholder="Crie uma senha"></td>
-                    </tr>
-                </td>
+    <form action="cad-farm.php" method="post">
+        <table>
+            <h1>Cadastro de Farmacias</h1>
+            <td>
+                <tr>
+                    <td>
+                        <h2>Nome</h2>
+                    </td>
+                    <td><input type="text" name="nome" placeholder="Informe o nome"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <h2>Endereço</h2>
+                    </td>
+                    <td><input type="text" name="endereco" placeholder="Informe o endereço"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <h2>Email</h2>
+                    </td>
+                    <td><input type="text" name="email" placeholder="Informe o email"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <h2>CNPJ</h2>
+                    </td>
+                    <td><input type="text" name="cnpj" placeholder="Informe o CNPJ (Apenas números!!!)"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <h2>Senha</h2>
+                    </td>
+                    <td><input type="password" name="senha" placeholder="Crie uma senha"></td>
+                </tr>
+            </td>
 
-            </table>
-            <input type="submit" name="cadButton" value="Cadastrar" class="account-button2">
-        </form>
+        </table>
+        <input type="submit" name="cadButton" value="Cadastrar" class="account-button2">
+    </form>
     <?php } ?>
 
     <a href="../html/index.html" class="menu-button2">Voltar</a>
