@@ -9,6 +9,18 @@
     <link rel="icon" href="../css/favicon.ico" type="image/x-icon">
 </head>
 
+<header>
+    <div class="header-rectangle">
+        <ul class="navigation">
+            <li class="left-image"><a href="../html/index.html"><img src="../css/1.png" alt="Imagem 1"></a></li>
+
+            <li class="center-image"><a href="../html/index.html"><img src="../css/2.png" alt="Imagem 2"></a></li>
+
+            <li class="right-image"><a href="../php/cadastro.php"><img src="../css/3.png" alt="Imagem 3"></a></li>
+        </ul>
+    </div>
+</header>
+
 <body>
     
     
@@ -122,7 +134,7 @@
             <input type="submit" name="logButton" value="Login" class="account-button2">
         </form>
     <?php } ?>
-    <a href="../html/index.html" class="menu-button2">Voltar</a>
+    <a href="../php/cadastro.php" class="menu-button2">Voltar</a>
 </body>
 
 </html>

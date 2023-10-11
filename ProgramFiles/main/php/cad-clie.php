@@ -9,6 +9,18 @@
     <link rel="icon" href="../css/favicon.ico" type="image/x-icon">
 </head>
 
+<header>
+    <div class="header-rectangle">
+        <ul class="navigation">
+            <li class="left-image"><a href="../html/index.html"><img src="../css/1.png" alt="Imagem 1"></a></li>
+
+            <li class="center-image"><a href="../html/index.html"><img src="../css/2.png" alt="Imagem 2"></a></li>
+
+            <li class="right-image"><a href="../php/cadastro.php"><img src="../css/3.png" alt="Imagem 3"></a></li>
+        </ul>
+    </div>
+</header>
+
 <body>
     <?php
     session_start();
@@ -52,13 +64,14 @@
             exit;
         }
     }
+    
     ?>
-
+<script src="../JavaScript/cpf.js"></script>
     <?php if ($indexForm) { ?>
-        <form action="cad-clie.php" method="post">
+        <form action="cad-clie.php" method="post" onsubmit="return  onSubmitForm(); validarCPF(document.getElementById('cpf').value);">
             <table>
                 <h1>Cadastro de Cliente</h1>
-                <td>                   
+                <td>
                     <tr>
                         <td>
                             <h2>Nome</h2>
@@ -69,7 +82,8 @@
                         <td>
                             <h2>CPF</h2>
                         </td>
-                        <td><input type="text" name="cpf" placeholder="Informe seu CPF (Apenas números!!!)"></td>
+                        <td><input type="text" name="cpf" id="CPF" placeholder="Informe seu CPF (Apenas números!!!)" 
+                            oninput="atualizarCampoCPF(); validarCPF(); limparAvisoCPF();"></td>
                     </tr>
                     <tr>
                         <td>
@@ -94,14 +108,14 @@
                             <h2>Senha</h2>
                         </td>
                         <td><input type="password" name="senha" placeholder="Crie uma senha"></td>
-                    </tr>              
-                    </td>  
+                    </tr>
+                </td>
             </table>
             <input type="submit" name="cadButton" value="Cadastrar" class="account-button2">
         </form>
     <?php } ?>
 
-    <a href="../html/index.html" class="menu-button2">Voltar</a>
+    <a href="../php/cadastro.php" class="menu-button2">Voltar</a>
 </body>
 
 </html>

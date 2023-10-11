@@ -1,9 +1,82 @@
 body {
-    background-color: #00a86b;
     font-family: 'Segoe UI';
     margin-block: 0;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.63) 0%, #FF0004 100%);
+    height: 1000px;
+}
+
+.navigation {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+@media all and (max-width: 800px) {
+    .navigation {
+        justify-content: space-around;
+    }
+}
+
+@media all and (max-width: 500px) {
+    .navigation {
+        flex-direction: column;
+    }
+}
+
+.left-image {
+    display: inline-block;
+    width: 50px;
+    height: 40px;
+    margin-top: 0;
+    padding-top: 0;
 
 }
+
+p {
+    margin-left: 10px;
+}
+
+.right-image {
+    display: inline-block;
+    width: 50px;
+    height: 40px;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.center-image {
+    display: inline-block;
+    width: 110px;
+    height: 90px;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+img {
+    width: 70%;
+    cursor: pointer;
+    border: none;
+}
+
+a {
+    width: 40%;  
+    color: #ffffff00;
+    background-color: #ffffff00;
+
+}
+
+.header-rectangle {
+    background-color: #EE2124;
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    margin-top: 0;
+    padding-top: 0;
+}
+
 
 th {
     color: #00a86b;
@@ -21,16 +94,13 @@ h2 {
     margin-block: auto;
     margin-inline: auto;
     font-size: 110%;
-
-
 }
 
 td {
     font-size: 100%;
 }
 
-table,
-a {
+table {
     margin: 0 auto;
     border-radius: 20px;
     background-color: #fff;
@@ -48,7 +118,7 @@ td {
 
 table {
     align-content: center;
-    margin-top: 2%;
+    margin-top: 100px;
     margin-left: 30%;
     padding-bottom: 0%;
     padding-top: 0%;
@@ -84,6 +154,12 @@ input[type="password"] {
 }
 
 .column {
+    align-content: center;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.column input[type="text"] {
     align-content: center;
     margin-top: 20px;
     text-align: center;
