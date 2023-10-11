@@ -5,10 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>funcionario</title>
 </head>
+
+<header>
+<?php include '../../html/header.html'; ?>
+</header>
+
 <body>
     <?php 
-        include_once('classes/FuncionarioClass.php');
-        include_once('classes/UserClass.php');
+        include_once('../classes/FuncionarioClass.php');
+        include_once('../classes/UserClass.php');
         
         session_start();
 
@@ -20,7 +25,7 @@
     ?>
 
     <p>
-        <a href="../html/index.html" class="menu-button2">Voltar</a>
+        <a href="../../html/index.html" class="menu-button2">Voltar</a>
     </p>
 </body>
 </html>

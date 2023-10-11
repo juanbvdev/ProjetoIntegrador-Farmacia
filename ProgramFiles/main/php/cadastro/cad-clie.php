@@ -5,27 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>FPB - Cadastro Cliente</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="icon" href="../css/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="icon" href="../../css/favicon.ico" type="image/x-icon">
 </head>
 
 <header>
-    <div class="header-rectangle">
-        <ul class="navigation">
-            <li class="left-image"><a href="../html/index.html"><img src="../css/1.png" alt="Imagem 1"></a></li>
-
-            <li class="center-image"><a href="../html/index.html"><img src="../css/2.png" alt="Imagem 2"></a></li>
-
-            <li class="right-image"><a href="../php/cadastro.php"><img src="../css/3.png" alt="Imagem 3"></a></li>
-        </ul>
-    </div>
+<?php include '../../html/header.html'; ?>
 </header>
 
 <body>
     <?php
     session_start();
-    include_once('classes/ClienteClass.php');
-    include_once('classes/UserClass.php');
+    include_once('../classes/ClienteClass.php');
+    include_once('../classes/UserClass.php');
 
     $indexForm = true;
 
@@ -60,13 +52,13 @@
 
             $_SESSION['clientes'][$_POST['cpf']] = $newClient;
 
-            header('Location: ../html/index.html');
+            header('Location: ../../html/index.html');
             exit;
         }
     }
     
     ?>
-<script src="../JavaScript/cpf.js"></script>
+<script src="../../JavaScript/cpf.js"></script>
     <?php if ($indexForm) { ?>
         <form action="cad-clie.php" method="post" onsubmit="return  onSubmitForm(); validarCPF(document.getElementById('cpf').value);">
             <table>
@@ -115,7 +107,7 @@
         </form>
     <?php } ?>
 
-    <a href="../php/cadastro.php" class="menu-button2">Voltar</a>
+    <a href="../cadastro/cadastro.php" class="menu-button2">Voltar</a>
 </body>
 
 </html>

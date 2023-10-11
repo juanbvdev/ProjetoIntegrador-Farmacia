@@ -6,6 +6,11 @@
     <link rel="stylesheet" href="../css/style.css">
     <title>Medico</title>
 </head>
+
+<header>
+<?php include 'header.php'; ?>
+</header>
+
 <body>
     <?php 
         include_once('classes/MedicoClass.php');
