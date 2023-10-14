@@ -15,48 +15,31 @@
 
 <body>
     <?php
-    session_start();
-    include_once('../classes/ClienteClass.php');
-    include_once('../classes/UserClass.php');
-
+    
+    require_once "../../config/database.php";
+    require_once "../Dao/UsuarioDAO.php";
     $indexForm = true;
-
-    if (!isset($_SESSION['clientes'])) {
-        $_SESSION['clientes'] = array();
+    
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $dados = array(
+            "nome" => $_POST["nome"],
+            "cpf_cnpj" => $_POST["cpf"],
+            "idade" => $_POST["idade"],
+            "endereco" => $_POST["endereco"],
+            "email" => $_POST["email"],
+            "permissao" => 1, 
+            "senha" => $_POST["senha1"]
+        );
+    
+     
+        $usuarioDAO = new UsuarioDAO($pdo); 
+    
+   
+        $usuarioDAO->cadastro($dados);
+        header('Location: ../../html/index.html');
+        exit;
     }
-
-    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cadButton'])) {
-        $campos = array('nome', 'cpf', 'idade', 'endereco', 'email', 'senha1', 'senha2');
-        $camposPreenchidos = true;
-
-        foreach ($campos as $campo) {
-            if (!isset($_POST[$campo]) || empty($_POST[$campo])) {
-                $camposPreenchidos = false;
-                break;
-            }
-        }
-
-        if ($camposPreenchidos) {
-            $newClient = new Cliente(
-                0,
-                "",
-                "",
-                $_POST['nome'],
-                $_POST['cpf'],
-                $_POST['idade'],
-                $_POST['endereco'],
-                $_POST['email'],
-                0,
-                $_POST['senha1']
-            );
-
-            $_SESSION['clientes'][$_POST['cpf']] = $newClient;
-
-            header('Location: ../../html/index.html');
-            exit;
-        }
-    }
-
+    
     ?>
     <script src="../../JavaScript/cpf.js"></script>
     <script src="../../JavaScript/email.js"></script>
@@ -64,7 +47,7 @@
     <script src="../../JavaScript/onsubmit.js"></script>
 
     <?php if ($indexForm) { ?>
-    <form action="cad-clie.php" method="post" class="password-form"
+    <form action="" method="post" class="password-form"
         onsubmit="return  onSubmitForm(); validarCPF(document.getElementById('cpf').value); limparAvisoCPF();">
         <table>
             <h1>Cadastro de Cliente</h1>
