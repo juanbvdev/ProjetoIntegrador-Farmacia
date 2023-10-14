@@ -10,6 +10,7 @@
 <?php include '../../html/header.html'; ?>
 </header>
 <body>
+<br><br><br><br><br><br><br>
     <?php 
         include_once('../classes/ClienteClass.php');
         include_once('../classes/UserClass.php');
@@ -20,6 +21,7 @@
 
         $client = $_SESSION['clientes'][$cpf];
 
+        
         echo $client->getNome();
     ?>
 

@@ -10,7 +10,7 @@
 </head>
 
 <header>
-<?php include '../../html/header.html'; ?>
+    <?php include '../../html/header.html'; ?>
 </header>
 
 <body>
@@ -26,7 +26,7 @@
     }
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cadButton'])) {
-        $campos = array('nome', 'cpf', 'idade', 'endereco', 'email', 'senha');
+        $campos = array('nome', 'cpf', 'idade', 'endereco', 'email', 'senha1', 'senha2');
         $camposPreenchidos = true;
 
         foreach ($campos as $campo) {
@@ -47,7 +47,7 @@
                 $_POST['endereco'],
                 $_POST['email'],
                 0,
-                $_POST['senha']
+                $_POST['senha1']
             );
 
             $_SESSION['clientes'][$_POST['cpf']] = $newClient;
@@ -56,55 +56,75 @@
             exit;
         }
     }
-    
+
     ?>
-<script src="../../JavaScript/cpf.js"></script>
+    <script src="../../JavaScript/cpf.js"></script>
+    <script src="../../JavaScript/email.js"></script>
+    <script src="../../JavaScript/senha.js"></script>
+    <script src="../../JavaScript/onsubmit.js"></script>
+
     <?php if ($indexForm) { ?>
-        <form action="cad-clie.php" method="post" onsubmit="return  onSubmitForm(); validarCPF(document.getElementById('cpf').value);">
-            <table>
-                <h1>Cadastro de Cliente</h1>
-                <td>
-                    <tr>
-                        <td>
-                            <h2>Nome</h2>
-                        </td>
-                        <td><input type="text" name="nome" placeholder="Informe seu nome"></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <h2>CPF</h2>
-                        </td>
-                        <td><input type="text" name="cpf" id="CPF" placeholder="Informe seu CPF (Apenas números!!!)" 
-                            oninput="atualizarCampoCPF(); validarCPF(); limparAvisoCPF();"></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <h2>Idade</h2>
-                        </td>
-                        <td><input type="text" name="idade" placeholder="Informe sua Idade"></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <h2>Endereço</h2>
-                        </td>
-                        <td><input type="text" name="endereco" placeholder="Informe seu Endereço"></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <h2>Email</h2>
-                        </td>
-                        <td><input type="text" name="email" placeholder="Informe seu Email"></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <h2>Senha</h2>
-                        </td>
-                        <td><input type="password" name="senha" placeholder="Crie uma senha"></td>
-                    </tr>
-                </td>
-            </table>
-            <input type="submit" name="cadButton" value="Cadastrar" class="account-button2">
-        </form>
+    <form action="cad-clie.php" method="post" class="password-form"
+        onsubmit="return  onSubmitForm(); validarCPF(document.getElementById('cpf').value); limparAvisoCPF();">
+        <table>
+            <h1>Cadastro de Cliente</h1>
+            <td>
+                <tr>
+                    <td>
+                        <h2>Nome</h2>
+                    </td>
+                    <td><input type="text" name="nome" id="nome" placeholder="Informe seu nome"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <h2>CPF</h2>
+                    </td>
+                    <td><input type="text" name="cpf" id="CPF" placeholder="Informe seu CPF (Apenas números!!!)"
+                            oninput="atualizarCampoCPF(); validarCPF(); limparAvisoCPF();">
+                        <div id="cpfWarning" style="color: red;"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h2>Idade</h2>
+                    </td>
+                    <td><input type="text" name="idade" id="idade" placeholder="Informe sua Idade"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <h2>Endereço</h2>
+                    </td>
+                    <td><input type="text" name="endereco" id="endereco" placeholder="Informe seu Endereço"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <h2>Email</h2>
+                    </td>
+                    <td><input type="text" name="email" id="email" placeholder="Informe seu Email"
+                            oninput="showSuggestions()">
+                        <div id="suggestions"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h2>Senha</h2>
+                    </td>
+                    <td><input type="password" name="senha1" id="senha1" placeholder="Crie uma senha"></td>
+                    <td>
+                </tr>
+                <tr>
+                    <td>
+                        <h2>Senha</h2>
+                    </td>
+                    <td><input type="password" name="senha2" id="senha2" placeholder="Confirme sua senha">
+                    </td>
+                </tr>
+            </td>
+        </table>
+        <p class="password-error" style="color: red;"></p>
+        <input type="submit" name="cadButton" value="Cadastrar" class="account-button2">
+    </form>
+
     <?php } ?>
 
     <a href="../cadastro/cadastro.php" class="menu-button2">Voltar</a>

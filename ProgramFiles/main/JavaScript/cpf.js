@@ -1,20 +1,3 @@
-function onSubmitForm() {
-    var cpfInput = document.getElementById("CPF");
-    var cpf = cpfInput.value.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
-
-    if (validarCPF(cpf)) {
-        cpfInput.value = formatarCPF(cpf); // Formata o CPF antes de enviar
-        return true; // CPF válido, pode prosseguir com o envio do formulário
-    } else {
-        // CPF inválido, remove os números e exibe a mensagem de aviso
-        cpfInput.value = ''; // Limpa o campo CPF
-        cpfInput.classList.add("invalid-cpf"); // Adiciona a classe
-        cpfInput.placeholder = "CPF inválido. Por favor, verifique o CPF.";
-        cpfInput.onfocus = function () { cpfInput.placeholder = "Digite o CPF"; }; // Define o placeholder ao focar
-        return false; // CPF inválido
-    }
-}
-
 function limparAvisoCPF() {
     var cpfWarning = document.getElementById("cpfWarning");
     cpfWarning.textContent = ""; // Limpa a mensagem de aviso
@@ -33,43 +16,62 @@ function atualizarCampoCPF() {
     cpfInput.value = formatarCPF(cpfInput.value);
 }
 
-function validarCPF(cpf) {
-    cpf = cpf.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
+function validarCPF() {
+    var cpfInput = document.getElementById("CPF");
+    var cpfWarning = document.getElementById("cpfWarning");
+    var cpf = cpfInput.value.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
 
-    if (cpf.length !== 11) {
-        return false; // O CPF deve ter 11 dígitos
+    if (cpf.length !== 11 || /^(\d)\1+$/.test(cpf)) {
+        // CPF inválido, exibe a mensagem de aviso e muda a cor do input
+        cpfInput.classList.add("invalid-cpf");
+        cpfInput.style.border = "2px solid red"; 
+        cpfInput.placeholder = "CPF inválido. Por favor, verifique o CPF.";
+        return false; // CPF inválido
     }
 
-    // Verifica se todos os dígitos são iguais; se sim, o CPF é inválido
-    if (/^(\d)\1+$/.test(cpf)) {
-        return false;
-    }
-
-    // Calcula o primeiro dígito verificador
-    var soma = 0;
+    // Validação do primeiro dígito verificador
+    var sum = 0;
     for (var i = 0; i < 9; i++) {
-        soma += parseInt(cpf.charAt(i)) * (10 - i);
+        sum += parseInt(cpf.charAt(i)) * (10 - i);
     }
-    var resto = 11 - (soma % 11);
-    var digitoVerificador1 = (resto === 10 || resto === 11) ? 0 : resto;
+    var remainder = (sum * 10) % 11;
 
-    // Verifica o primeiro dígito verificador
-    if (digitoVerificador1 !== parseInt(cpf.charAt(9))) {
-        return false;
+    if (remainder === 10 || remainder === 11) {
+        remainder = 0;
     }
 
-    // Calcula o segundo dígito verificador
-    soma = 0;
+    if (remainder !== parseInt(cpf.charAt(9))) {
+        // Primeiro dígito verificador inválido
+        cpfInput.classList.add("invalid-cpf");
+        cpfInput.style.border = "2px solid red"; 
+        cpfInput.placeholder = "CPF inválido. Por favor, verifique o CPF.";
+        return false; // CPF inválido
+    }
+
+    // Validação do segundo dígito verificador
+    sum = 0;
     for (var i = 0; i < 10; i++) {
-        soma += parseInt(cpf.charAt(i)) * (11 - i);
+        sum += parseInt(cpf.charAt(i)) * (11 - i);
     }
-    resto = 11 - (soma % 11);
-    var digitoVerificador2 = (resto === 10 || resto === 11) ? 0 : resto;
+    remainder = (sum * 10) % 11;
 
-    // Verifica o segundo dígito verificador
-    if (digitoVerificador2 !== parseInt(cpf.charAt(10))) {
-        return false;
+    if (remainder === 10 || remainder === 11) {
+        remainder = 0;
     }
 
-    return true; // O CPF é válido
+    if (remainder !== parseInt(cpf.charAt(10))) {
+        // Segundo dígito verificador inválido
+        cpfInput.classList.add("invalid-cpf");
+        cpfInput.style.border = "2px solid red"; 
+        cpfInput.placeholder = "CPF inválido. Por favor, verifique o CPF.";
+        return false; // CPF inválido
+    }
+
+    // CPF válido, limpa a mensagem de aviso e restaura a cor do input
+    cpfInput.classList.remove("invalid-cpf");
+    cpfInput.placeholder = "Digite o CPF";
+    cpfWarning.textContent = "";
+    return true; // CPF válido
 }
+
+

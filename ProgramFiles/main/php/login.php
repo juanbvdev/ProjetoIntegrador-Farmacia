@@ -90,11 +90,11 @@
             $senha = $_POST['senha'];
             
             if(findMedic($nome, $cpf)) {
-                header('Location: screen-med.php');
+                header('Location: telas-users/screen-med.php');
                 exit();
             }
             if(findClient($nome, $cpf)) {
-                header('Location: screen-clie.php');
+                header('Location: telas-users/screen-clie.php');
                 exit();
             }
             if(findFuncionario($nome, $cpf)) {

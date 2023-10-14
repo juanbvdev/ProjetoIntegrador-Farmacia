@@ -140,7 +140,7 @@ input[type="password"] {
     height: 20px;
     padding: 10px;
     background: #fff;
-    border: 1px solid #00a86b;
+    border: 1px solid #8a05be;
     color: #000;
     margin-top: 10px 0;
     padding-right: 5px;
@@ -272,6 +272,25 @@ input[type="password"] {
     color: #fff;
     transition: background-color 0.3s, color 0.3s;
 }
+
+.invalid-cpf {
+    border: 2px solid red;
+    color: red;
+}
+
+.invalid-cpf::placeholder{
+    color: red;
+}
+
+
+.password-form input[type="password"].error::placeholder {
+    color: red; 
+  }
+  
+.password-form input[type="password"].error {
+    border: 2px solid red;
+  }
+  
 
 /* body {
     font-family: 'Segoe UI';
