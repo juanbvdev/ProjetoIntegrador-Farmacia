@@ -1,6 +1,6 @@
 <?php 
-require_once "./ProgramFiles/main/config/database.php";
-require_once "./ProgramFiles/main/php/classes/FuncionarioClass.php";
+require_once "../../config/database.php";
+require_once "../classes/FuncionarioClass.php";
 class FuncionarioDAO {
 
     private $pdo;

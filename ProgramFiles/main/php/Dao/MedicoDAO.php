@@ -1,6 +1,6 @@
 <?php 
-require_once "./ProgramFiles/main/config/database.php";
-require_once "./ProgramFiles/main/php/classes/MedicoClass.php";
+require_once "../../config/database.php";
+require_once "../classes/MedicoClass.php";
 class MedicoDAO {
 
     private $pdo;

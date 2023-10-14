@@ -1,10 +1,12 @@
 <?php 
-require_once "./ProgramFiles/main/config/database.php";
-require_once "./ProgramFiles/main/php/classes/UserClass.php";
+require_once "../../config/database.php";
+require_once "../classes/UserClass.php";
 class UsuarioDAO {
 
     private $pdo;
-
+    public function __construct(PDO $pdo) {
+        $this->pdo = $pdo;
+    }
     public function cadastro(array $dados) {
         $sql = "INSERT INTO usuarios (nome, cpf_cnpj, idade, endereco, email, permissao, senha) VALUES (:nome, :cpf_cnpj, :idade, :endereco, :email, :permissao, :senha)";
         $stmt = $this->pdo->prepare($sql);
@@ -18,10 +20,6 @@ class UsuarioDAO {
         $stmt->execute();
         return $this->pdo->lastInsertId();
     }
-    public function __construct(PDO $pdo) {
-        $this->pdo = $pdo;
-    }
-
     public function atualizar(array $dados) {
         $sql = "UPDATE usuarios SET nome = :nome, cpf_cnpj = :cpf_cnpj, idade = :idade, endereco = :endereco, email = :email, permissao = :permissao, senha = :senha WHERE id = :id";
         $stmt = $this->pdo->prepare($sql);
