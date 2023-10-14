@@ -15,38 +15,40 @@
 
 <body>
     <?php
-    
     require_once "../../config/database.php";
     require_once "../Dao/UsuarioDAO.php";
+
     $indexForm = true;
-    
+
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        echo '<script>
+                var cpfValido = validarCPF("' . $_POST["cpf"] . '");
+                var emailValido = validarEmail("' . $_POST["email"] . '");
+                var senhaValida = validarSenha("' . $_POST["senha1"] . '");
+
+                if (!cpfValido || !emailValido || !senhaValida) {
+                    alert("Por favor, corrija os campos antes de enviar o formulário.");
+                    return false;
+                }
+             </script>';
         $dados = array(
             "nome" => $_POST["nome"],
             "cpf_cnpj" => $_POST["cpf"],
             "idade" => $_POST["idade"],
             "endereco" => $_POST["endereco"],
             "email" => $_POST["email"],
-            "permissao" => 1, 
+            "permissao" => 1,
             "senha" => $_POST["senha1"]
         );
-    
-     
-        $usuarioDAO = new UsuarioDAO($pdo); 
-    
-   
+
+        $usuarioDAO = new UsuarioDAO($pdo);
         $usuarioDAO->cadastro($dados);
         header('Location: ../../html/index.html');
         exit;
     }
-    
     ?>
-    <script src="../../JavaScript/cpf.js"></script>
-    <script src="../../JavaScript/email.js"></script>
-    <script src="../../JavaScript/senha.js"></script>
-    <script src="../../JavaScript/onsubmit.js"></script>
 
-    <?php if ($indexForm) { ?>
+<?php if ($indexForm) { ?>
     <form action="" method="post" class="password-form"
         onsubmit="return  onSubmitForm(); validarCPF(document.getElementById('cpf').value); limparAvisoCPF();">
         <table>
@@ -111,6 +113,11 @@
     <?php } ?>
 
     <a href="../cadastro/cadastro.php" class="menu-button2">Voltar</a>
+
+    <script src="../../JavaScript/cpf.js"></script>
+    <script src="../../JavaScript/email.js"></script>
+    <script src="../../JavaScript/senha.js"></script>
+    <script src="../../JavaScript/onsubmit.js"></script>
 </body>
 
 </html>
