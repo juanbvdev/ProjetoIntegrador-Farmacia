@@ -31,7 +31,7 @@
                     return false;
                 }
              </script>';
-        $dados = array(
+        $dadosUsuario = array(
             "nome" => $_POST["nome"],
             "cpf_cnpj" => $_POST["cpf"],
             "idade" => $_POST["idade"],
@@ -42,7 +42,7 @@
         );
 
         $usuarioDAO = new UsuarioDAO($pdo);
-        $usuarioDAO->cadastro($dados);
+        $usuarioDAO->cadastro($dadosUsuario);
         header('Location: ../../html/index.html');
         exit;
     }

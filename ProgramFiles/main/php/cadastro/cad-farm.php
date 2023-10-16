@@ -14,63 +14,38 @@
 </header>
 
 <body>
-    <?php
-    include_once('../classes/FarmaciaClass.php');
-    include_once('../classes/UserClass.php');
+<?php
+require_once "../../config/database.php";
+require_once "../Dao/UsuarioDAO.php";
+require_once "../Dao/FarmaciaDAO.php";
 
-    session_start();
+$indexForm = true;
 
-    // reset do server e da pagina
-    // session_unset();
-    // header('Location: cad-farm.php');
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $dadosUsuario = array(
+        "nome" => $_POST["nome"],
+        "cpf_cnpj" => $_POST["cnpj"],
+        "idade" => 0,
+        "endereco" => $_POST["endereco"],
+        "email" => $_POST["email"],
+        "permissao" => 4, 
+        "senha" => $_POST["senha"]
+    );
 
-    $indexForm = true;
+    $usuarioDAO = new UsuarioDAO($pdo);
+    $idUsuario = $usuarioDAO->cadastro($dadosUsuario);
+    
+    $farmaciaDAO = new FarmaciaDAO($pdo);
+    $farmaciaDAO->cadastro($idUsuario);
 
-    if (!isset($_SESSION['farmacias'])) {
-        $_SESSION['farmacias'] = array();
-    }
+    header('Location: ../../html/index.html');
+    exit;
+}
+?>
 
-    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cadButton'])) {
-        $campos = array('nome', 'endereco', 'email', 'cnpj', 'senha');
-        $camposPreenchidos = true;
-
-        foreach ($campos as $campo) {
-            if (!isset($_POST[$campo]) || empty($_POST[$campo])) {
-                $camposPreenchidos = false;
-                break;
-            }
-        }
-
-        if ($camposPreenchidos) {
-            $newFarmacia = new Farmacia(
-                0,
-                $_POST['nome'],
-                $_POST['cnpj'],
-                0,
-                $_POST['endereco'],
-                $_POST['email'],
-                0,
-                $_POST['senha']
-            );
-
-            $_SESSION['farmacias'][$_POST['cnpj']] = $newFarmacia;
-        }
-    }
-
-    if (isset($_POST['vFarm'])) {
-        foreach ($_SESSION['farmacias'] as $farm) {
-            echo $farm->getNome();
-        }
-    }
-    ?>
-
-    <form action="cad-farm.php" method="post">
-        <input type="submit" name="vFarm" value="ver farmacias">
-    </form>
-    <?php
-    if ($indexForm) { ?>
-    <form action="cad-farm.php" method="post">
-        <table>
+<?php if ($indexForm) { ?>
+        <form action="" method="post">
+            <table>
             <h1>Cadastro de Farmacias</h1>
             <td>
                 <tr>
@@ -105,12 +80,17 @@
                 </tr>
             </td>
 
-        </table>
-        <input type="submit" name="cadButton" value="Cadastrar" class="account-button2">
-    </form>
+            </table>
+            <input type="submit" name="cadButton" value="Cadastrar" class="account-button2">
+        </form>
     <?php } ?>
 
     <a href="../cadastro/cadastro.php" class="menu-button2">Voltar</a>
+
+    <script src="../../JavaScript/cpf.js"></script>
+    <script src="../../JavaScript/email.js"></script>
+    <script src="../../JavaScript/senha.js"></script>
+    <script src="../../JavaScript/onsubmit.js"></script>
 </body>
 
 </html>

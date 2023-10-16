@@ -14,63 +14,45 @@
 </header>
 
 <body>
-    <?php
-    include_once('../classes/MedicoClass.php');
+<?php
+require_once "../../config/database.php";
+require_once "../Dao/UsuarioDAO.php";
+require_once "../Dao/MedicoDAO.php";
 
-    session_start();
+$indexForm = true;
 
-    // reset do server e da pagina
-    // session_unset();
-    // header('Location: cad-med.php');
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $dadosUsuario = array(
+        "nome" => $_POST["nome"],
+        "cpf_cnpj" => $_POST["cpf"],
+        "idade" => $_POST["idade"],
+        "endereco" => $_POST["endereco"],
+        "email" => $_POST["email"],
+        "permissao" => 2, 
+        "senha" => $_POST["senha"]
+    );
 
-    $indexForm = true;
+    $usuarioDAO = new UsuarioDAO($pdo);
+    $idUsuario = $usuarioDAO->cadastro($dadosUsuario);
 
-    if (!isset($_SESSION['medicos'])) {
-        $_SESSION['medicos'] = array();
-    }
+    // $dadosMedico = array(
+    //     "registro" => $_POST["registro"],
+    //     "prescricoes" => $_POST["prescricoes"],
+    //     "idusuario" => $idUsuario
+    // );
 
-    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cadButton'])) {
-        $campos = array('nome', 'cpf', 'idade', 'endereco', 'email', 'registro', 'senha');
-        $camposPreenchidos = true;
+    // $medicoDAO = new MedicoDAO($pdo);
+    // $idMedico = $medicoDAO->cadastro($dadosMedico);
 
-        foreach ($campos as $campo) {
-            if (!isset($_POST[$campo]) || empty($_POST[$campo])) {
-                $camposPreenchidos = false;
-                break;
-            }
-        }
+    header('Location: ../../html/index.html');
+    exit;
+}
+?>
 
-        if ($camposPreenchidos) {
-            $newMedic = new Medico(
-                0,
-                "",
-                "",
-                $_POST['nome'],
-                $_POST['cpf'],
-                $_POST['idade'],
-                $_POST['endereco'],
-                $_POST['email'],
-                0,
-                $_POST['senha']
-            );
-            $_SESSION['medicos'][$_POST['cpf']] = $newMedic;
-        }
-    }
-
-    if (isset($_POST['vMedic'])) {
-        foreach ($_SESSION['medicos'] as $med) {
-            echo $med->getNome();
-        }
-    }
-    ?>
-
-    <form action="cad-med.php" method="post">
-        <input type="submit" name="vMedic" value="ver médicos">
-    </form>
 
     <?php
     if ($indexForm) { ?>
-        <form action="cad-med.php" method="post">
+        <form action="" method="post">
             <table>
                 <h1>Cadastro de Médico</h1>
                 <td>

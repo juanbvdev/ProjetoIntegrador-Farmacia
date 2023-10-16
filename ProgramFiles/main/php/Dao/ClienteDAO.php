@@ -2,7 +2,6 @@
 require_once "../../config/database.php";
 require_once "../classes/ClienteClass.php";
 class ClienteDAO {
-
     private $pdo;
 
     public function __construct(PDO $pdo) {
@@ -10,9 +9,9 @@ class ClienteDAO {
     }
 
     public function cadastro(array $dados) {
-        $sql = "INSERT INTO clientes (idcliente, retiradas, receitas) VALUES (:idcliente, :retiradas, :receitas)";
+        $sql = "INSERT INTO clientes (idcliente, idusuario, retiradas, receitas) VALUES (NULL, :idusuario, :retiradas, :receitas)";
         $stmt = $this->pdo->prepare($sql);
-        $stmt->bindValue(":idcliente", $dados["idcliente"]);
+        $stmt->bindValue(":idusuario", $dados["idusuario"]);
         $stmt->bindValue(":retiradas", $dados["retiradas"]);
         $stmt->bindValue(":receitas", $dados["receitas"]);
         $stmt->execute();

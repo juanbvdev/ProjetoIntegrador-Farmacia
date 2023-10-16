@@ -7,16 +7,16 @@ class UsuarioDAO {
     public function __construct(PDO $pdo) {
         $this->pdo = $pdo;
     }
-    public function cadastro(array $dados) {
+    public function cadastro(array $dadosUsuario) {
         $sql = "INSERT INTO usuarios (nome, cpf_cnpj, idade, endereco, email, permissao, senha) VALUES (:nome, :cpf_cnpj, :idade, :endereco, :email, :permissao, :senha)";
         $stmt = $this->pdo->prepare($sql);
-        $stmt->bindValue(":nome", $dados["nome"]);
-        $stmt->bindValue(":cpf_cnpj", $dados["cpf_cnpj"]);
-        $stmt->bindValue(":idade", $dados["idade"]);
-        $stmt->bindValue(":endereco", $dados["endereco"]);
-        $stmt->bindValue(":email", $dados["email"]);
-        $stmt->bindValue(":permissao", $dados["permissao"]);
-        $stmt->bindValue(":senha", $dados["senha"]);
+        $stmt->bindValue(":nome", $dadosUsuario["nome"]);
+        $stmt->bindValue(":cpf_cnpj", $dadosUsuario["cpf_cnpj"]);
+        $stmt->bindValue(":idade", $dadosUsuario["idade"]);
+        $stmt->bindValue(":endereco", $dadosUsuario["endereco"]);
+        $stmt->bindValue(":email", $dadosUsuario["email"]);
+        $stmt->bindValue(":permissao", $dadosUsuario["permissao"]);
+        $stmt->bindValue(":senha", $dadosUsuario["senha"]);
         $stmt->execute();
         return $this->pdo->lastInsertId();
     }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 14/10/2023 às 20:05
+-- Tempo de geração: 16/10/2023 às 02:51
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `projeto-farmacia`
 --
+CREATE DATABASE IF NOT EXISTS `projeto-farmacia` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `projeto-farmacia`;
 
 -- --------------------------------------------------------
 
@@ -29,9 +31,16 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `clientes` (
   `idcliente` int(11) NOT NULL,
+  `idusuario` int(11) NOT NULL,
   `retiradas` varchar(255) NOT NULL,
   `receitas` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- RELACIONAMENTOS PARA TABELAS `clientes`:
+--   `idusuario`
+--       `usuarios` -> `id`
+--
 
 -- --------------------------------------------------------
 
@@ -40,8 +49,22 @@ CREATE TABLE `clientes` (
 --
 
 CREATE TABLE `farmacias` (
-  `idfarmacia` int(11) NOT NULL
+  `idfarmacia` int(11) NOT NULL,
+  `idusuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- RELACIONAMENTOS PARA TABELAS `farmacias`:
+--   `idusuario`
+--       `usuarios` -> `id`
+--
+
+--
+-- Despejando dados para a tabela `farmacias`
+--
+
+INSERT INTO `farmacias` (`idfarmacia`, `idusuario`) VALUES
+(1, 1);
 
 -- --------------------------------------------------------
 
@@ -51,24 +74,15 @@ CREATE TABLE `farmacias` (
 
 CREATE TABLE `funcionarios` (
   `idfuncionario` int(11) NOT NULL,
+  `idusuario` int(11) NOT NULL,
   `atendimento` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- --------------------------------------------------------
-
 --
--- Estrutura para tabela `log`
+-- RELACIONAMENTOS PARA TABELAS `funcionarios`:
+--   `idusuario`
+--       `usuarios` -> `id`
 --
-
-CREATE TABLE `log` (
-  `id` int(11) NOT NULL,
-  `data` datetime NOT NULL,
-  `tabela` varchar(255) NOT NULL,
-  `coluna` varchar(255) NOT NULL,
-  `valor_antigo` varchar(255) DEFAULT NULL,
-  `valor_novo` varchar(255) DEFAULT NULL,
-  `usuario` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -78,9 +92,16 @@ CREATE TABLE `log` (
 
 CREATE TABLE `medicos` (
   `idmedico` int(11) NOT NULL,
-  `registro` varchar(255) NOT NULL,
-  `prescricoes` varchar(255) NOT NULL
+  `idusuario` int(11) NOT NULL,
+  `registro` varchar(500) NOT NULL,
+  `prescricoes` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- RELACIONAMENTOS PARA TABELAS `medicos`:
+--   `idusuario`
+--       `usuarios` -> `id`
+--
 
 -- --------------------------------------------------------
 
@@ -91,13 +112,26 @@ CREATE TABLE `medicos` (
 CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL,
   `nome` varchar(255) NOT NULL,
-  `cpf_cnpj` varchar(255) NOT NULL,
-  `idade` int(11) NOT NULL,
+  `cpf_cnpj` int(18) NOT NULL,
+  `idade` int(11) DEFAULT NULL,
   `endereco` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
+  `email` varchar(255) DEFAULT NULL,
   `permissao` int(11) NOT NULL,
   `senha` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- RELACIONAMENTOS PARA TABELAS `usuarios`:
+--
+
+--
+-- Despejando dados para a tabela `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `nome`, `cpf_cnpj`, `idade`, `endereco`, `email`, `permissao`, `senha`) VALUES
+(1, 'geregotando', '123456789111111', 0, 'rua dos anjos, 277, parque dos anjos, 94180220', 'loja@gmail.com', 4, '1'),
+(2, 'pedro barbosa', '025.694.670-14', 22, 'sao paulo', '', 1, '1'),
+(3, 'matue roxo', '293.925.430-34', 22, '', 'roxotue@gmai.com', 2, '1');
 
 --
 -- Índices para tabelas despejadas
@@ -107,31 +141,29 @@ CREATE TABLE `usuarios` (
 -- Índices de tabela `clientes`
 --
 ALTER TABLE `clientes`
-  ADD PRIMARY KEY (`idcliente`);
+  ADD PRIMARY KEY (`idcliente`),
+  ADD KEY `idusuario` (`idusuario`);
 
 --
 -- Índices de tabela `farmacias`
 --
 ALTER TABLE `farmacias`
-  ADD PRIMARY KEY (`idfarmacia`);
+  ADD PRIMARY KEY (`idfarmacia`),
+  ADD KEY `idusuario` (`idusuario`);
 
 --
 -- Índices de tabela `funcionarios`
 --
 ALTER TABLE `funcionarios`
-  ADD PRIMARY KEY (`idfuncionario`);
-
---
--- Índices de tabela `log`
---
-ALTER TABLE `log`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`idfuncionario`),
+  ADD KEY `idusuario` (`idusuario`);
 
 --
 -- Índices de tabela `medicos`
 --
 ALTER TABLE `medicos`
-  ADD PRIMARY KEY (`idmedico`);
+  ADD PRIMARY KEY (`idmedico`),
+  ADD KEY `idusuario` (`idusuario`);
 
 --
 -- Índices de tabela `usuarios`
@@ -153,19 +185,13 @@ ALTER TABLE `clientes`
 -- AUTO_INCREMENT de tabela `farmacias`
 --
 ALTER TABLE `farmacias`
-  MODIFY `idfarmacia` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idfarmacia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `funcionarios`
 --
 ALTER TABLE `funcionarios`
   MODIFY `idfuncionario` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de tabela `log`
---
-ALTER TABLE `log`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `medicos`
@@ -177,7 +203,7 @@ ALTER TABLE `medicos`
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Restrições para tabelas despejadas
@@ -187,25 +213,25 @@ ALTER TABLE `usuarios`
 -- Restrições para tabelas `clientes`
 --
 ALTER TABLE `clientes`
-  ADD CONSTRAINT `clientes_ibfk_1` FOREIGN KEY (`idcliente`) REFERENCES `usuarios` (`id`);
+  ADD CONSTRAINT `clientes_ibfk_1` FOREIGN KEY (`idusuario`) REFERENCES `usuarios` (`id`);
 
 --
 -- Restrições para tabelas `farmacias`
 --
 ALTER TABLE `farmacias`
-  ADD CONSTRAINT `farmacias_ibfk_1` FOREIGN KEY (`idfarmacia`) REFERENCES `usuarios` (`id`);
+  ADD CONSTRAINT `farmacias_ibfk_1` FOREIGN KEY (`idusuario`) REFERENCES `usuarios` (`id`);
 
 --
 -- Restrições para tabelas `funcionarios`
 --
 ALTER TABLE `funcionarios`
-  ADD CONSTRAINT `funcionarios_ibfk_1` FOREIGN KEY (`idfuncionario`) REFERENCES `usuarios` (`id`);
+  ADD CONSTRAINT `funcionarios_ibfk_1` FOREIGN KEY (`idusuario`) REFERENCES `usuarios` (`id`);
 
 --
 -- Restrições para tabelas `medicos`
 --
 ALTER TABLE `medicos`
-  ADD CONSTRAINT `medicos_ibfk_1` FOREIGN KEY (`idmedico`) REFERENCES `usuarios` (`id`);
+  ADD CONSTRAINT `medicos_ibfk_1` FOREIGN KEY (`idusuario`) REFERENCES `usuarios` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
