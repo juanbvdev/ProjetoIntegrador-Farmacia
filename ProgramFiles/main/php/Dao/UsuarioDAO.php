@@ -1,27 +1,25 @@
 <?php 
-require_once "./ProgramFiles/main/config/database.php";
-require_once "./ProgramFiles/main/php/classes/UserClass.php";
+require_once "../../config/database.php";
+require_once "../classes/UserClass.php";
 class UsuarioDAO {
 
     private $pdo;
-
-    public function cadastro(array $dados) {
-        $sql = "INSERT INTO usuarios (nome, cpf_cnpj, idade, endereco, email, permissao, senha) VALUES (:nome, :cpf_cnpj, :idade, :endereco, :email, :permissao, :senha)";
-        $stmt = $this->pdo->prepare($sql);
-        $stmt->bindValue(":nome", $dados["nome"]);
-        $stmt->bindValue(":cpf_cnpj", $dados["cpf_cnpj"]);
-        $stmt->bindValue(":idade", $dados["idade"]);
-        $stmt->bindValue(":endereco", $dados["endereco"]);
-        $stmt->bindValue(":email", $dados["email"]);
-        $stmt->bindValue(":permissao", $dados["permissao"]);
-        $stmt->bindValue(":senha", $dados["senha"]);
-        $stmt->execute();
-        return $this->pdo->lastInsertId();
-    }
     public function __construct(PDO $pdo) {
         $this->pdo = $pdo;
     }
-
+    public function cadastro(array $dadosUsuario) {
+        $sql = "INSERT INTO usuarios (nome, cpf_cnpj, idade, endereco, email, permissao, senha) VALUES (:nome, :cpf_cnpj, :idade, :endereco, :email, :permissao, :senha)";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindValue(":nome", $dadosUsuario["nome"]);
+        $stmt->bindValue(":cpf_cnpj", $dadosUsuario["cpf_cnpj"]);
+        $stmt->bindValue(":idade", $dadosUsuario["idade"]);
+        $stmt->bindValue(":endereco", $dadosUsuario["endereco"]);
+        $stmt->bindValue(":email", $dadosUsuario["email"]);
+        $stmt->bindValue(":permissao", $dadosUsuario["permissao"]);
+        $stmt->bindValue(":senha", $dadosUsuario["senha"]);
+        $stmt->execute();
+        return $this->pdo->lastInsertId();
+    }
     public function atualizar(array $dados) {
         $sql = "UPDATE usuarios SET nome = :nome, cpf_cnpj = :cpf_cnpj, idade = :idade, endereco = :endereco, email = :email, permissao = :permissao, senha = :senha WHERE id = :id";
         $stmt = $this->pdo->prepare($sql);

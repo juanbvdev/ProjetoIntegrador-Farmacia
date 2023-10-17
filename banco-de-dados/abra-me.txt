@@ -1,0 +1,1 @@
+no meio superior vai ter a opção importar, e importe o arquivo sql que esta na mesma pasta
