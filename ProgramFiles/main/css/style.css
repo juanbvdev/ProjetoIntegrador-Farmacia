@@ -2,25 +2,13 @@ body {
     font-family: 'Segoe UI';
     margin-block: 0;
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.63) 0%, #f11519 100%);
-    height: 1000px;
+    height: 1500px;
 }
 
 .navigation {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-}
-
-@media all and (max-width: 800px) {
-    .navigation {
-        justify-content: space-around;
-    }
-}
-
-@media all and (max-width: 500px) {
-    .navigation {
-        flex-direction: column;
-    }
 }
 
 .left-image {
@@ -34,6 +22,7 @@ body {
 
 p {
     margin-left: 10px;
+    margin-top: 50px;
 }
 
 .right-image {
@@ -53,13 +42,13 @@ p {
 }
 
 img {
-    width: 70%;
+    width: 75%;
     cursor: pointer;
     border: none;
 }
 
 a {
-    width: 40%;  
+    width: 40%;
     color: #ffffff00;
     background-color: #ffffff00;
 
@@ -103,7 +92,7 @@ td {
 table {
     margin: 0 auto;
     border-radius: 20px;
-    background: linear-gradient(25deg, rgba(255, 255, 255, 0.63) 0%, #47B64A 100%);
+    background: linear-gradient(30deg, rgba(255, 255, 255, 0.63) 0%, #47B64A 100%);
     color: #272727;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 40%;
@@ -175,7 +164,7 @@ input[type="password"] {
     display: inline-block;
     width: 80%;
     height: 50px;
-    background-color: #ce7b38;
+    background: linear-gradient(200deg, #ffffff65 0%, #47B64A 100%);
     color: #fff;
     text-align: center;
     line-height: 50px;
@@ -214,7 +203,7 @@ input[type="password"] {
     display: inline-block;
     width: 80%;
     height: 50px;
-    background-color: #EE2124;
+    background: linear-gradient(200deg, #ffffff65 0%, #47B64A 100%);
     color: #fff;
     text-align: center;
     line-height: 50px;
@@ -247,15 +236,15 @@ input[type="password"] {
 
 .menu-button:hover,
 .menu-button:focus {
-    background-color: #ffffff;
-    color: #00a86b;
+    background: linear-gradient(200deg, #47B64A 0%, #ffffff65 100%);
+    color: #000000;
     transition: background-color 0.3s;
 }
 
 .account-button:hover,
 .account-button:focus {
-    background-color: #ffffff;
-    color: #00a86b;
+    background: linear-gradient(200deg, #47B64A 0%, #ffffff65 100%);
+    color: #000000;
     transition: background-color 0.3s;
 }
 
@@ -278,19 +267,48 @@ input[type="password"] {
     color: red;
 }
 
-.invalid-cpf::placeholder{
+.invalid-cpf::placeholder {
     color: red;
 }
 
 
 .password-form input[type="password"].error::placeholder {
-    color: red; 
-  }
-  
+    color: red;
+}
+
 .password-form input[type="password"].error {
     border: 2px solid red;
-  }
-  
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 5px;
+    width: 80%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
 
 /* body {
     font-family: 'Segoe UI';

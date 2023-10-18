@@ -24,7 +24,7 @@
                     </div>
                     <div class="third-column">
                         <h2>Login</h2>
-                        <a href="../login.php" class="account-button">Login</a>
+                        <a href="../telas-users/login.php" class="account-button">Login</a>
                     </div>
             </td>
         </table>

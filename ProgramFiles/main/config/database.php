@@ -15,5 +15,3 @@ if ($pdo) {
 } else {
     echo "Erro ao conectar ao banco de dados!";
 }
-
-?>
