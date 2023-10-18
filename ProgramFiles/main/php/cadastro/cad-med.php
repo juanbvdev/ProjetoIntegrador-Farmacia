@@ -19,7 +19,7 @@
     require_once "../Dao/UsuarioDAO.php";
     require_once "../../config/existent-user.php";
 
-$indexForm = true;
+    $indexForm = true;
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo '<script>
@@ -55,8 +55,10 @@ $indexForm = true;
     <?php
     if ($indexForm) { ?>
         <form action="" method="post" class="password-form" data-tipo-formulario="medico" onsubmit="return onSubmitForm(this); validarCPF(document.getElementById('cpf').value); limparAvisoCPF();">
+            <p>
+            <h1>Cadastro de Médico</h1>
+            </p>
             <table>
-                <p><h1>Cadastro de Médico</h1></p>
                 <td>
                     <tr>
                         <td>

@@ -53,8 +53,10 @@
 
     <?php if ($indexForm) { ?>
         <form action="" method="post" class="password-form" data-tipo-formulario="farmacia" onsubmit="return onSubmitForm(this); validarCPF(document.getElementById('cpf').value); limparAvisoCPF();">
+            <p>
+            <h1>Cadastro de Farmacias</h1>
+            </p>
             <table>
-              <p>  <h1>Cadastro de Farmacias</h1></p>
                 <td>
                     <tr>
                         <td>

@@ -54,8 +54,11 @@
 
     <?php if ($indexForm) { ?>
         <form action="" method="post" class="password-form" onsubmit="return onSubmitForm(); validarCPF(document.getElementById('cpf').value); limparAvisoCPF();">
+        <p>
+            <h1>Cadastro de Cliente</h1>
+            </p>
             <table>
-               <p> <h1>Cadastro de Cliente</h1></p>
+                <td>
                     <tr>
                         <td>
                             <h2>Nome</h2>
@@ -104,14 +107,12 @@
                         <td><input type="password" name="senha2" id="senha2" placeholder="Confirme sua senha">
                         </td>
                     </tr>
+                    <input type="hidden" id="tipoFormulario" name="tipoFormulario" value="cliente">
+                    <p class="password-error" style="color: red;"></p>
                 </td>
-                <input type="hidden" id="tipoFormulario" name="tipoFormulario" value="cliente">
-
             </table>
-            <p class="password-error" style="color: red;"></p>
             <input type="submit" name="cadButton" value="Cadastrar" class="account-button2">
         </form>
-
     <?php } ?>
 
     <a href="../cadastro/cadastro.php" class="menu-button2">Voltar</a>

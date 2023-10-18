@@ -9,6 +9,10 @@ body {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
+    margin-top: 3px;
+    padding-left: 15px;
+    padding-right: 15px;
+
 }
 
 .left-image {
@@ -23,6 +27,7 @@ body {
 p {
     margin-left: 10px;
     margin-top: 50px;
+    margin-bottom: 5px;
 }
 
 .right-image {
@@ -35,14 +40,14 @@ p {
 
 .center-image {
     display: inline-block;
-    width: 110px;
+    width: 100px;
     height: 90px;
     margin-top: 0;
     padding-top: 0;
 }
 
 img {
-    width: 75%;
+    width: 100%;
     cursor: pointer;
     border: none;
 }
@@ -64,11 +69,6 @@ a {
     z-index: 999;
     margin-top: 0;
     padding-top: 0;
-}
-
-
-th {
-    color: #00a86b;
 }
 
 h1 {
@@ -96,6 +96,13 @@ table {
     color: #272727;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 40%;
+    align-content: center;
+    margin-top: 10px;
+    margin-left: 30%;
+    padding-bottom: 0%;
+    padding-top: 0%;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 
@@ -105,17 +112,8 @@ td {
     padding-left: 1px;
 }
 
-table {
-    align-content: center;
-    margin-top: 100px;
-    margin-left: 30%;
-    padding-bottom: 0%;
-    padding-top: 0%;
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
 .table-menu {
+    margin-top: 10px;
     align-content: center;
     margin-bottom: 5%;
     margin-left: 0%;
@@ -183,7 +181,7 @@ input[type="password"] {
     width: 40%;
     height: 40px;
     background-color: #fff;
-    color: #00a86b;
+    color: #000000;
     text-align: center;
     font-size: 90%;
     line-height: 42px;
@@ -222,7 +220,7 @@ input[type="password"] {
     width: 40%;
     height: 40px;
     background-color: #fff;
-    color: #00a86b;
+    color: #000000;
     text-align: center;
     line-height: 42px;
     text-decoration: none;
@@ -237,27 +235,27 @@ input[type="password"] {
 .menu-button:hover,
 .menu-button:focus {
     background: linear-gradient(200deg, #47B64A 0%, #ffffff65 100%);
-    color: #000000;
+    color: #fff;
     transition: background-color 0.3s;
 }
 
 .account-button:hover,
 .account-button:focus {
     background: linear-gradient(200deg, #47B64A 0%, #ffffff65 100%);
-    color: #000000;
+    color: #fff;
     transition: background-color 0.3s;
 }
 
 .account-button2:hover,
 .account-button2:focus {
-    background-color: #00a86b;
+    background-color: #ffffff00;
     color: #fff;
     transition: background-color 0.3s, color 0.3s;
 }
 
 .menu-button2:hover,
 .menu-button2:focus {
-    background-color: #00a86b;
+    background-color: #ffffff00;
     color: #fff;
     transition: background-color 0.3s, color 0.3s;
 }
