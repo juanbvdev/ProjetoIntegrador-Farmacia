@@ -1,1 +1,4 @@
-no meio superior vai ter a opção importar, e importe o arquivo sql que esta na mesma pasta
+Crie um DB com o nome "projeto-farmacia". 
+Na parte syuperior ao meio da tela clique na opção "importar".
+E selecione o arquivo "projeto-farmacia.sql".
+Conclua a Importação.
