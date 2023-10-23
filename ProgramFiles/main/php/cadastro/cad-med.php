@@ -56,7 +56,6 @@
     if ($indexForm) { ?>
         <form action="" method="post" class="password-form" data-tipo-formulario="medico" onsubmit="return onSubmitForm(this); validarCPF(document.getElementById('cpf').value); limparAvisoCPF();">
             <table>
-                <h1>Cadastro de Médico</h1>
                 <td>
                     <tr>
                         <td>
@@ -112,6 +111,7 @@
                         </td>
                     </tr>
                 </td>
+                <input type="hidden" id="tipoFormulario" name="tipoFormulario" value="medico">
             </table>
             <p class="password-error" style="color: red;"></p>
             <input type="submit" name="cadButton" value="Cadastrar" class="account-button2">
