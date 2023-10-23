@@ -1,14 +1,17 @@
 # ProjetoIntegrador-Farmacia
 Projeto integrador, módulo D do curso Técnico em Informática no Senac.
 
-Este projeto consiste em desenvolver um sistema de rede de farmácias. Onde será possível
-utilizar o software como usuário (cliente), médico e farmacêutico.
+Este projeto consiste em desenvolver um sistema da rede de farmacias populares. Onde será possível
+utilizar o software como paciente, médico e farmacêutico.
+Podendo ver suas receitas que estão disponiveis para a retirada.
+Ver a disponibilidade de medicamentos.
+Receber noticifação do vencimento da receita.
 
 ---Cadastro--- 
 
 Médico
 
-Cliente
+Paciente
 
 Farmácia
 
@@ -20,58 +23,32 @@ Farmácia
 
  Cadastro de Medicamento
 
- Cadastro de Funcionário
-
- Cadastro de Cliente
-
 ---Remédio---
 
- Preço
-
- Promoção
-
- Histórico de valor
-
  Disponibilidade em farmácia
-
----Funcionário---
-
- Realizar venda
-
- Consultar medicamentos
-
- Consultar estoque
-
- Cadastrar cliente
 
 ---Médico---
 
 Receita Médica
 
----Cliente---
+---Paciente---
 
  Histórico de pesquisa
  
- Histórico de compras
+ Histórico de retiradas
  
  Histórico de receitas
  
- Pagamento Digital (PIX/cartão de crédito)
- 
- Alerta de Promoção
+ Alerta de Receitas
 
 ---Classes---
 
 Pai:
 
-  usuário-padrão (nome, cpf, idade, endereço, celular, email, permissão)
+  usuário-padrão (nome, cpf_cnpj, idade, endereço, celular, email, permissão)
 
 Filho:
 
-  Médico (registro, prescrições)
+  Médico (idMedico, registro, prescrições)
   
-  Farmácia (CNPJ)
-  
-  Funcionário (vendas, idFuncionário)
-  
-  Cliente (cartões, compras, idCliente, receitas)
+  Paciente (idCliente, retiradas, receitas)

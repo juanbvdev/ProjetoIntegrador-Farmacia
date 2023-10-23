@@ -1,6 +1,6 @@
 <?php 
-require_once "../../config/database.php";
-require_once "../classes/UserClass.php";
+include_once "../../config/database.php";
+include_once "../classes/UserClass.php";
 class UsuarioDAO {
 
     private $pdo;
@@ -55,5 +55,15 @@ class UsuarioDAO {
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+    public function buscarPorNomeECpf($nome, $cpf) {
+        $sql = "SELECT * FROM usuarios WHERE nome = :nome AND cpf_cnpj = :cpf";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindValue(':nome', $nome);
+        $stmt->bindValue(':cpf', $cpf);
+        $stmt->execute();
+
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
 }
 ?>

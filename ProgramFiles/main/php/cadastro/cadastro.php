@@ -9,27 +9,28 @@
 </head>
 
 <header>
-<?php include '../../html/header.html'; ?>
+    <?php include '../../html/header.html'; ?>
 </header>
 
 <body>
-    <div class="table-menu">
-        <table>
-            <td>
-                    <div class="column">
-                        <h2>Cadastros</h2>
-                        <a href="../cadastro/cad-clie.php" class="menu-button">Cadastro de Cliente</a>
-                        <a href="../cadastro/cad-med.php" class="menu-button">Cadastro de Médico</a>
-                        <a href="../cadastro/cad-farm.php" class="account-button">Cadastro de Farmacia</a>
-                    </div>
-                    <div class="third-column">
-                        <h2>Login</h2>
-                        <a href="../login.php" class="account-button">Login</a>
-                    </div>
-            </td>
-        </table>
-        <a href="../../html/index.html" class="menu-button2">Voltar</a>
-    </div>
+    <p>
+    <h1>‎</h1>
+    </p>
+    <table>
+        <td>
+            <div class="column">
+                <h2>Cadastros</h2>
+                <a href="../cadastro/cad-clie.php" class="menu-button">Cadastro de Cliente</a>
+                <a href="../cadastro/cad-med.php" class="menu-button">Cadastro de Médico</a>
+                <a href="../cadastro/cad-farm.php" class="account-button">Cadastro de Farmacia</a>
+            </div>
+            <div class="third-column">
+                <h2>Login</h2>
+                <a href="../telas-users/login.php" class="account-button">Login</a>
+            </div>
+        </td>
+    </table>
+    <a href="../../index.html" class="menu-button2">Voltar</a>
 </body>
 
 </html>
