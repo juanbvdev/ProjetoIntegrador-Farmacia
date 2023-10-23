@@ -35,6 +35,7 @@ class ClienteDAO {
         $stmt->execute();
         return $stmt->rowCount();
     }
+    
     public function listar() {
         $sql = "SELECT * FROM clientes";
         $stmt = $this->pdo->query($sql);

@@ -44,11 +44,17 @@ function autenticarUsuario($nome, $cpf, $usuarioDAO) {
              exit();
         } elseif ($permissao == 2) {
             header('Location: ../telas-users/screen-med.php?id=' . $usuario['id']);
+            session_start();
+            $_SESSION['username'] = $nome;
+            $_SESSION['password'] = $cpf;
             exit();
         } elseif ($permissao == 3) {
             echo 'Funcionário logado'; 
         } elseif ($permissao == 4) {
             header('Location: ../telas-users/screen-farm.php?id=' . $usuario['id']);
+            session_start();
+            $_SESSION['username'] = $nome;
+            $_SESSION['password'] = $cpf;
             exit();
         }
     } else {

@@ -30,7 +30,7 @@
             </div>
         </td>
     </table>
-    <a href="../../index.html" class="menu-button2">Voltar</a>
+    <a href="../../index.php" class="menu-button2">Voltar</a>
 </body>
 
 </html>
