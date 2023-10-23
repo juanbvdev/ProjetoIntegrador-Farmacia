@@ -53,8 +53,10 @@
 
     <?php if ($indexForm) { ?>
         <form action="" method="post" class="password-form" data-tipo-formulario="farmacia" onsubmit="return onSubmitForm(this); validarCPF(document.getElementById('cpf').value); limparAvisoCPF();">
+            <p>
+            <h1>Cadastro de Farmacias</h1>
+            </p>
             <table>
-                <h1>Cadastro de Farmacias</h1>
                 <td>
                     <tr>
                         <td>
@@ -99,7 +101,7 @@
                         </td>
                     </tr>
                 </td>
-
+                <input type="hidden" id="tipoFormulario" name="tipoFormulario" value="farmacia">
             </table>
             <p class="password-error" style="color: red;"></p>
             <input type="submit" name="cadButton" value="Cadastrar" class="account-button2">

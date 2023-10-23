@@ -55,6 +55,9 @@
     <?php
     if ($indexForm) { ?>
         <form action="" method="post" class="password-form" data-tipo-formulario="medico" onsubmit="return onSubmitForm(this); validarCPF(document.getElementById('cpf').value); limparAvisoCPF();">
+            <p>
+            <h1>Cadastro de Médico</h1>
+            </p>
             <table>
                 <td>
                     <tr>
