@@ -45,7 +45,7 @@
         if (userexistente($_POST["cpf"], $_POST["endereco"])) {
             $usuarioDAO = new UsuarioDAO($pdo);
             $usuarioDAO->cadastro($dados);
-            header('Location: ../../html/index.html');
+            header('Location: ../../index.php');
             exit;
         }
     }

@@ -62,19 +62,6 @@ function autenticarUsuario($nome, $cpf, $usuarioDAO) {
     }
 }
 ?>
-
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FPB - Login</title>
-    <link rel="stylesheet" href="../../css/style.css">
-    <link rel="icon" href="../../css/favicon.ico" type="image/x-icon">
-</head>
-
-<body>
     <form action="" method="post">
         <table>
            <p> <h1>Login</h1></p>

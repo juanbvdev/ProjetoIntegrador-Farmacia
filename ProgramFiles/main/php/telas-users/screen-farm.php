@@ -56,7 +56,7 @@
                 die('Arquivo muito grande! O tamanho máximo é de 2MB.');
             }
 
-            $pasta = "../../css/images/medicamentos/";
+            $pasta = "../../images/medicamentos/";
             $nomeArquivo = $arquivo['name'];
             $novonomeArquivo = uniqid();
             $extension = strtolower(pathinfo($nomeArquivo, PATHINFO_EXTENSION));

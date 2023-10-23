@@ -2,7 +2,7 @@ body {
     font-family: 'Segoe UI';
     margin-block: 0;
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.63) 0%, #f11519 100%);
-    height: 1500px;
+    height: 1500px
 }
 
 .navigation {
@@ -122,7 +122,8 @@ td {
 
 input[type="text"],
 input[type="number"],
-input[type="password"] {
+input[type="password"],
+input[type="date"] {
     width: 100%;
     height: 20px;
     padding: 10px;
@@ -151,6 +152,7 @@ input[type="password"] {
     margin-top: 20px;
     text-align: center;
 }
+
 
 .third-column {
     align-content: center;
