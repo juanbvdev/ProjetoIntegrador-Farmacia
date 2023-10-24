@@ -56,21 +56,20 @@
                 die('Arquivo muito grande! O tamanho máximo é de 2MB.');
             }
 
-            $pasta = "../../images/medicamentos/";
+            $pasta = "../../css/images/medicamentos/";
             $nomeArquivo = $arquivo['name'];
             $novonomeArquivo = uniqid();
             $extension = strtolower(pathinfo($nomeArquivo, PATHINFO_EXTENSION));
 
             if ($extension != "jpg" || $extension != 'png') {
-                // die('Tipo de arquivo não suportado. Apenas arquivos PNG e JPG são permitidos.');
-                echo("Tipo de arquivo não suportado. Apenas arquivos PNG e JPG são permitidos.");
+
             }
 
             $novonomeArquivoCompleto = $novonomeArquivo . "." . $extension;
 
             $moove = move_uploaded_file($arquivo["tmp_name"], $pasta . $novonomeArquivoCompleto);
             if ($moove) {
-                echo "<p>Arquivo enviado com sucesso.</a>";
+                // echo "<p>Arquivo enviado com sucesso.</a>";
 
                 $dadosMedicamento = [
                     'nome' => $nome_medicamento,
@@ -83,7 +82,7 @@
                 $medicamentoDAO = new MedicamentoDAO($pdo);
 
                 if ($medicamentoDAO->cadastro($dadosMedicamento)) {
-                    echo "Medicamento registrado com sucesso!";
+
                 } else {
                     echo "Erro ao registrar o medicamento no banco de dados.";
                 }
@@ -158,12 +157,13 @@
             </tr>
             <tr>
                 <td>
-                    <label for="imagem_medicamento">Imagem do Medicamento:</label>
+                    <h2>Imagem do Medicamento</h2>
                 </td>
-                <td><input type="file" name="imagem_medicamento" id="imagem_medicamento" required></td>
+                <td><input type="file" name="imagem_medicamento" id="imagem_medicamento" required style="display: none;"><label for="imagem_medicamento" class="custom-file-input">Escolha uma imagem (PNG ou JPG)</label></td>
+                
             </tr>
             <tr>
-                <td><input type="submit" value="Adicionar Medicamento"></td>
+                <td><input type="submit" value="Adicionar Medicamento" class="account-button"></td>
             </tr>
         </table>
         <p> <a href="../telas-users/login.php" class="menu-button2">Voltar</a></p>
@@ -171,5 +171,4 @@
     </form>
 </body>
 
-</html>
 </html>
