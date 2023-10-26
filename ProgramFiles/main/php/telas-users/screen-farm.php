@@ -69,7 +69,7 @@
 
             $moove = move_uploaded_file($arquivo["tmp_name"], $pasta . $novonomeArquivoCompleto);
             if ($moove) {
-                // echo "<p>Arquivo enviado com sucesso.</a>";
+                echo "<p>Arquivo enviado com sucesso.</p>";
 
                 $dadosMedicamento = [
                     'nome' => $nome_medicamento,
@@ -86,13 +86,15 @@
                 } else {
                     echo "Erro ao registrar o medicamento no banco de dados.";
                 }
-            } else {
-                echo "Erro ao fazer upload da imagem.";
+            
+                ob_end_clean();
+            
+                http_response_code(303);
+                header("Location: " . $_SERVER['REQUEST_URI']);
+                exit;
             }
-        } else {
-            echo "Por favor, envie uma imagem do medicamento.";
-        }
-    }
+        }}
+
 
     ?>
     <td>
