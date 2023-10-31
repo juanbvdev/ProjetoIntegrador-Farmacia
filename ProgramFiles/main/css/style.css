@@ -1,9 +1,88 @@
 body {
-    font-family: 'Segoe UI';
+    font-family: 'Roboto', sans-serif;
     margin-block: 0;
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.63) 0%, #f11519 100%);
     height: 1500px
 }
+.row{
+    margin: 0;
+}
+.container{
+    padding: 70px 0;
+}
+
+p,li{
+    color: #272727;
+    font-size: 14px;
+
+}
+
+header,.navbar {
+    background-color: #EE2124;
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    margin-top: 0;
+    padding-top: 0; 
+}
+
+#nav-container{
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+#logo1{
+    width: 60px;
+    padding: 10px;
+    padding-top: 15px;
+}
+
+.navbar-brand{
+    padding: 0;
+    color: #fff;
+
+}
+
+.navbar-brand a {
+    padding: 1rem .8rem;
+}
+
+.navbar-brand:hover{
+    color: #fff;
+
+}
+
+#navbar-links a {
+    color: #fff;
+    
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding: 1rem .8rem;
+}
+
+.dropdown-menu{
+    background-color: #EE2124;
+}
+
+/* a .nav-link .dropdown-toggle{
+    padding: 1rem .8rem;
+    color: #272727;
+} */
+
+
+
+
+
+
+
+
+
+
+
 
 .navigation {
     display: flex;
@@ -52,12 +131,6 @@ img {
     border: none;
 }
 
-a {
-    width: 40%;
-    color: #ffffff00;
-    background-color: #ffffff00;
-
-}
 
 .header-rectangle {
     background-color: #EE2124;

@@ -4,32 +4,55 @@
 <head>
     <meta charset="UTF-8">
     <title>FPB - Início</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="css/favicon.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/ed891ee09d.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 
 <header>
-    <div class="header-rectangle">
-        <ul class="navigation">
-            <li class="left-image"><a href="index.php"><img src="css/images/12.png" alt="Imagem 1"></a></li>
-            <li class="center-image"><a href="index.php"><img src="css/images/22.png" alt="Imagem 2"></a></li>
-            <li class="right-image"><a href="php/cadastro/cadastro.php"><img src="css/images/32.png" alt="Imagem 3"></a></li>
-        </ul>
+    <div class="container" id="nav-container">
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <a href="index.php" class="navbar-brand">
+                <img id="logo1" src="css/images/12.png" alt="">
+                Farmacia Popular</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-links" aria-controls="navbar-links" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbar-links">
+                <div class="navbar-nav">
+                    <a href="index.php" class="nav-item nav-link" id="home-menu">Inicio</a>
+                    <a href="php/cadastro/cadastro.php" class="nav-item nav-link" id="cad-menu">Cadastro</a>
+                    <a href="php/telas-users/login.php" class="nav-item nav-link" id="log-menu">Login</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Minha Conta</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Configurações</a></li>
+                            <li><a class="dropdown-item" href="#">Sobre</a></li>
+                            <li><a class="dropdown-item" href="#">Sair</a></li>
+                        </ul>
+                    </li>
+                </div>
+            </div>
+        </nav>
     </div>
 </header>
 
 <body>
-    <p>
+    <!-- <p>
     <h1>‎</h1>
     </p>
     <table>
         <td>
-        <div class="column">
+            <div class="column">
         <td><input type="text" name="pesquisa" placeholder="O que deseja?"></td>
         </div>
         </td>
-    </table>
-
+    </table> -->
+    <script src="js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 
 </html>
