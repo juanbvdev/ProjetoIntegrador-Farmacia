@@ -1,29 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FPB - Cadastro Médico</title>
-    <link href="../../css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../css/style.css">
-    <link rel="icon" href="../../css/favicon.ico" type="image/x-icon">
-    <script src="https://kit.fontawesome.com/ed891ee09d.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <script src="../../js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>   
-</head>
-
-<header>
-    <?php include '../../html/header.html'; ?>
-</header>
-
-<body>
-    <?php
-    require_once "../../config/database.php";
-    require_once "../Dao/UsuarioDAO.php";
-    require_once "../../config/existent-user.php";
+  <?php
 
     $indexForm = true;
 
@@ -51,90 +26,83 @@
         if (userexistente($_POST["cpf"], $_POST["endereco"])) {
             $usuarioDAO = new UsuarioDAO($pdo);
             $usuarioDAO->cadastro($dados);
-            header('Location: ../../index.php');
+            header('Location: index.php');
             exit;
         }
     }
-    ?>
-
-
-    <?php
     if ($indexForm) { ?>
-        <form action="" method="post" class="password-form" data-tipo-formulario="medico" onsubmit="return onSubmitForm(this); validarCPF(document.getElementById('cpf').value); limparAvisoCPF();">
-            <p>
-            <h1>Cadastro de Médico</h1>
-            </p>
-            <table>
-                <td>
-                    <tr>
-                        <td>
-                            <h2>Nome</h2>
-                        </td>
-                        <td><input type="text" name="nome" placeholder="Informe seu nome"></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <h2>CPF</h2>
-                        </td>
-                        <td><input type="text" name="cpf" id="CPF" placeholder="Informe seu CPF (Apenas números!!!)" oninput="atualizarCampoCPF(); validarCPF(); limparAvisoCPF();">
-                            <div id="cpfWarning" style="color: red;"></div>
-                    </tr>
-                    <tr>
-                        <td>
-                            <h2>Idade</h2>
-                        </td>
-                        <td><input type="text" name="idade" placeholder="Informe sua idade"></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <h2>Endereço</h2>
-                        </td>
-                        <td><input type="text" name="endereco" placeholder="Informe seu endereço"></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <h2>Email</h2>
-                        </td>
-                        <td><input type="text" name="email" id="email" placeholder="Informe seu Email" oninput="showSuggestions()">
-                            <div id="suggestions"></div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <h2>Registro</h2>
-                        </td>
-                        <td><input type="text" name="registro" placeholder="Informe seu registro"></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <h2>Senha</h2>
-                        </td>
-                        <td><input type="password" name="senha1" id="senha1" placeholder="Crie uma senha"></td>
-                        <td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <h2>Senha</h2>
-                        </td>
-                        <td><input type="password" name="senha2" id="senha2" placeholder="Confirme sua senha">
-                        </td>
-                    </tr>
-                </td>
-                <input type="hidden" id="tipoFormulario" name="tipoFormulario" value="medico">
-            </table>
-            <p class="password-error" style="color: red;"></p>
-            <input type="submit" name="cadButton" value="Cadastrar" class="account-button2">
-        </form>
+      <form action="" method="post" class="password-form" data-tipo-formulario="medico" onsubmit="return onSubmitForm(this); validarCPF(document.getElementById('cpf').value); limparAvisoCPF();">
+          <p>
+          <h1>Cadastro de Médico</h1>
+          </p>
+          <table>
+              <td>
+                  <tr>
+                      <td>
+                          <h2>Nome</h2>
+                      </td>
+                      <td><input type="text" name="nome" placeholder="Informe seu nome"></td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <h2>CPF</h2>
+                      </td>
+                      <td><input type="text" name="cpf" id="CPF" placeholder="Informe seu CPF (Apenas números!!!)" oninput="atualizarCampoCPF(); validarCPF(); limparAvisoCPF();">
+                          <div id="cpfWarning" style="color: red;"></div>
+                  </tr>
+                  <tr>
+                      <td>
+                          <h2>Idade</h2>
+                      </td>
+                      <td><input type="text" name="idade" placeholder="Informe sua idade"></td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <h2>Endereço</h2>
+                      </td>
+                      <td><input type="text" name="endereco" placeholder="Informe seu endereço"></td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <h2>Email</h2>
+                      </td>
+                      <td><input type="text" name="email" id="email" placeholder="Informe seu Email" oninput="showSuggestions()">
+                          <div id="suggestions"></div>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <h2>Registro</h2>
+                      </td>
+                      <td><input type="text" name="registro" placeholder="Informe seu registro"></td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <h2>Senha</h2>
+                      </td>
+                      <td><input type="password" name="senha1" id="senha1" placeholder="Crie uma senha"></td>
+                      <td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <h2>Senha</h2>
+                      </td>
+                      <td><input type="password" name="senha2" id="senha2" placeholder="Confirme sua senha">
+                      </td>
+                  </tr>
+              </td>
+              <input type="hidden" id="tipoFormulario" name="tipoFormulario" value="medico">
+          </table>
+          <p class="password-error" style="color: red;"></p>
+          <input type="submit" name="cadButton" value="Cadastrar" class="account-button2">
+      </form>
 
-    <?php } ?>
+  <?php } ?>
 
-    <a href="../cadastro/cadastro.php" class="menu-button2">Voltar</a>
+  <a href="?page=cadastro" class="menu-button2">Voltar</a>
 
-    <script src="../../JavaScript/cpf.js"></script>
-    <script src="../../JavaScript/email.js"></script>
-    <script src="../../JavaScript/senha.js"></script>
-    <script src="../../JavaScript/onsubmit.js"></script>
-    <script src="../../JavaScript/validar-med.js"></script>
-</body>
-
-</html>
+  <script src="../../JavaScript/cpf.js"></script>
+  <script src="../../JavaScript/email.js"></script>
+  <script src="../../JavaScript/senha.js"></script>
+  <script src="../../JavaScript/onsubmit.js"></script>
+  <script src="../../JavaScript/validar-med.js"></script>

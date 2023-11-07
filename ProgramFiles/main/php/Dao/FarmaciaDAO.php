@@ -1,6 +1,6 @@
 <?php
-require_once "../../config/database.php";
-require_once "../classes/FarmaciaClass.php";
+require_once "config/database.php";
+require_once "php/classes/FarmaciaClass.php";
 class FarmaciaDAO {
 
     private $pdo;

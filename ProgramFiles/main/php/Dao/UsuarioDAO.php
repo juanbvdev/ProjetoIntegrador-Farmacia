@@ -1,6 +1,6 @@
 <?php 
-include_once "../../config/database.php";
-include_once "../classes/UserClass.php";
+include_once "config/database.php";
+include_once "php/classes/UserClass.php";
 class UsuarioDAO {
 
     private $pdo;

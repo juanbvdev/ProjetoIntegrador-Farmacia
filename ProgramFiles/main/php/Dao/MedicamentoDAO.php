@@ -1,6 +1,6 @@
 <?php 
-require_once "../../config/database.php";
-require_once "../classes/ClienteClass.php";
+require_once "config/database.php";
+require_once "php/classes/ClienteClass.php";
 class MedicamentoDAO {
     private $pdo;
 
